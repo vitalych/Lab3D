@@ -1,0 +1,260 @@
+EditExp 2.0
+
+Introduction
+============
+
+
+A native Delphi component to evaluate expressions.
+
+Features:
+
+* Full set of operators
+* More than 20 built-in functions
+* Implicit parentheses
+* Variables using a StringGrid
+* Result can be a Double number or a formated string
+
+To contact: Ricardo Barrenechea
+            rbarre@cis.com.ar
+
+
+
+How to use EditExp
+==================
+
+Installation 
+============
+
+First copy the file EDITEXP.DCU to your component directory. 
+To install EditExp to your development system, select 
+"Options|Install Components" from the Borland IDE. 
+Add the file EDITEXP.DCU and rebuild the component library.
+The new component can be found under the section SAMPLES on the palette.
+
+A demonstration program is provided in ExpTest.dpr
+
+
+Quick Start of using EditExp
+===========================
+
+1.)  Drop the "EditExp" component on your form.
+2.)  Drop a "button" and a "Edit" to the same form.
+3.)  Double-Click on the "button" and write the following in response
+     to a button click.
+
+     procedure TForm1.Button1Click(Sender: TObject);
+     begin
+          Edit1.Text:=EditExp1.SValue;
+     end;
+
+4.)  Compile and run !! Thats all !!
+5.)  Write any expression in the "EditExp", like 1+1 or more complex 
+     expressionslike sin(Pi/2)*log(5)^2
+6.)  Click the button and watch the result in the "Edit" component
+
+
+
+Short Technical Documentation of EditExp
+========================================
+
+Published Properties
+====================
+
+Mask : string;  This property allows the user to decide the Mask to use
+                when you read the SValue property. The Mask format is the
+                same as the one used in "FormatFloat" function, for example
+                '0.00' to show only two decimals.
+
+VarGrid : TStringGrid;  The StringGrid to use when using var's. See the 
+                        section "Using VAR'S"
+
+UseVar : boolean;       Use or not the Var's.
+
+
+
+Read Only Properties
+====================
+
+Value : double;        The value of the expression, or cero (0) if there is
+                       an error in the expression.
+
+SValue : string;       The value in string format using the Mask.
+
+Exp : string;          The final expression to evaluate, with NO VARS, using the
+                       values of the var's instead.
+
+Public Methods
+==============
+
+Error : boolan;        TRUE if there is an Error in the expression.
+
+GetError : string;     The last Error string
+                       0: ' No error ';
+                       1: ' Illegal character';
+                       2: ' Incorrect syntax';
+                       3: ' Illegal or missing parenthese';
+                       4: ' Incorrect real format';
+                       5: ' Illegal function';
+                       6: ' Result is undefined';
+                       7: ' Result is too large';
+                       8: ' Result is complex';
+                       9: ' Division by zero';
+
+
+
+
+Using Var's
+===========
+
+You can use var's in the expressions between [], like
+
+2*[Tax]^[Periods]
+
+To define the names and values of the Var's you have to use the VarGrid 
+property, and fill the Cells[1,x] with the name and Cells[2,x] with the 
+value of the var.
+
+For example:
+
+.....
+
+ { Define and use var's}
+ EditExp1.VarGrid := StringGrid1;
+ EditExp1.UseVar  := true;
+
+ { Fill the String Grid}
+ with StringGrid1 do
+ begin
+      Cells[1,1]:='Tax';      Cells[2,1]:='0.12';
+      Cells[1,2]:='Periods';  Cells[2,2]:='10';
+ end;
+
+ { Enter the Expression}
+ EditExp1.Text:='2*[Tax]^[Periods]';
+
+ { NOW you have the VALUE} 
+ x:=EditExp1.value;
+
+......
+
+Important !
+
+- Upper and Lower case is IGNORED
+- The StringGrid needs at least 3 col's.
+- The name  of the var in the stringGrid is in the column #1 (the first is #0)!
+- The value of the var in the stringGrid is in the column #2 
+- The name of the var in the expression has to be between [ and ]
+- Look at the EditTEST example 
+- If you don't want the user to fill the EditExp, you can make it visible=false
+  and fill it by program.
+- If you don't want the user to fill the StringGrid, you can make it visible=false
+  and fill it by program.
+
+
+Advance Documentation
+=====================
+
+----------------------- Numbers : 
+
+0.01 = .01  = 1E-2
+
+
+----------------------- Operators :
+
++ - / * ^ !
+
+2^3 = 8
+3! = 6
+
+
+----------------------------- Parentheses :
+
+(1+2)*3 = 9
+1+2*3   = 7    (+ and -) are implicit parentheses
+1+(2*3) = 7
+1+(2)3  = 7    ()() have and implicit * between
+
+
+----------------------------- Functions :
+
+* PI 
+  Pi+1 = 4.14159265359194
+
+* ABS
+  2*Abs(-1) = 2
+
+* SQRT
+  Sqrt(16) = 4 
+
+* SQR
+  Sqr(4) = 16
+
+
+* LNG  
+  Lng(2.71) = 0.9969
+
+* LOG 
+  Log(100) = 2 
+
+* EXP 
+  Exp(1)      = 2.71828182846002
+  Lng(Exp(1)) = 1
+
+* FACT
+  Fact(4) = 24
+  4!      = 24
+
+* SINH
+  SinH(pi/2) = 2.301
+  CosH(1)^2 - SinH(1)^2 = 1
+
+* COSH
+  CosH(pi/2) = 2.509
+  CosH(1)^2 - SinH(1)^2 = 1
+
+* TANH
+  TanH(pi/2) = 0.917
+  SinH(pi/2)/CosH(pi/2) = 0.917
+
+
+* SECH
+  SecH(3)*CosH(3) = 1
+
+
+* CSCH
+  CscH(5)*SinH(5) = 1
+
+
+* COTH
+  CotH(4)*TanH(4) = 1
+ 
+
+* SIN
+  Sin(Pi/2) = 1
+
+* COS
+  Cos(Pi) = -1
+
+* TAN
+  Tan(Pi) =0
+
+* SEC
+  Sec(Pi) = -1
+
+* CSC
+  Csc(Pi/2) = 1
+
+* COT
+  Cot(pi/2) = 0
+
+* ASIN
+  Asin(1)*2 = 3.14159
+
+* ACOS
+  Acos(-1)  = 3.14159
+
+* ATAN
+  Atan(0) = 0
+
+
+
