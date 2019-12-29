@@ -104,7 +104,7 @@ begin
       CreateProps;
     end;
 
-    i:=cbList.items.add(obj.object_name+'=0');
+    i:=cbList.items.add(obj.object_name);
     cbList.ItemIndex := i;
     cbList.Update;
 
