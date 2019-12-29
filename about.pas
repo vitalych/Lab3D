@@ -22,8 +22,8 @@ unit about;
 
 interface
 
-uses Windows, SysUtils, Classes, Graphics, Forms, Controls, StdCtrls,
-  Buttons, ExtCtrls, OfficeBalloon, btOdeum;
+uses Windows, SysUtils, Classes, Graphics, Forms, Controls, StdCtrls, Buttons, ExtCtrls,
+  ActnList;
 
 type
   TAboutBox = class(TForm)
@@ -34,11 +34,8 @@ type
     Image2: TImage;
     Image3: TImage;
     Image4: TImage;
-    ksoBalloonButton1: TksoBalloonButton;
-    ksoBalloonForm1: TksoBalloonForm;
     Label1: TLabel;
-    btBeeper1: TbtBeeper;
-    procedure FormShow(Sender: TObject);
+    ActionList1: TActionList;
   private
     { Private declarations }
   public
@@ -51,10 +48,5 @@ var
 implementation
 
 {$R *.DFM}
-
-procedure TAboutBox.FormShow(Sender: TObject);
-begin
- btBeeper1.PlayPresetSound(psOfficial);
-end;
 
 end.

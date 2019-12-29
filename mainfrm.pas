@@ -25,9 +25,9 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   ExtCtrls, StdCtrls, DXClass, DXInput, ComCtrls, Menus, math,
-  DXDraws, Buttons, unite_3d, objets3d, ImgList, fichiers, EditExp,
-  ehshelprouter, Grids, DXSprite, jpeg, RxGrdCpt, ExtDlgs,
-  DXSounds, MPlayer, mmsystem, directx, Wave, OfficeBalloon, btOdeum;
+  DXDraws, Buttons, unite_3d, objets3d, ImgList, fichiers,
+  Grids, DXSprite, jpeg, ExtDlgs,
+  DXSounds, MPlayer, mmsystem, directx, Wave;
 
 type
   TForm1 = class(TDXForm)
@@ -51,7 +51,6 @@ type
     Enregistrersous1: TMenuItem;
     OpenDialog1: TOpenDialog;
     SaveDialog1: TSaveDialog;
-    HelpRouter1: THelpRouter;
 
     DXImageList1: TDXImageList;
     OpenPictureDialog1: TOpenPictureDialog;
@@ -77,7 +76,6 @@ type
     N6: TMenuItem;
     DplacementsONOFF1: TMenuItem;
     chkFilFer: TCheckBox;
-    btBeeper1: TbtBeeper;
 
     procedure DXDrawFinalize(Sender: TObject);
     procedure DXDrawInitializing(Sender: TObject);
@@ -92,7 +90,6 @@ type
     procedure Inspecteurdobjets1Click(Sender: TObject);
     procedure Nouveau1Click(Sender: TObject);
     procedure btnStopClick(Sender: TObject);
-    procedure Rubriquedaide1Click(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure chkZBUFClick(Sender: TObject);
@@ -113,10 +110,10 @@ type
     procedure Button3Click(Sender: TObject);
     procedure DisplayHelp;
   private
-    { Déclarations privées}
+    { Dï¿½clarations privï¿½es}
 
   public
-    { Déclarations publiques}
+    { Dï¿½clarations publiques}
 
      tps:double;
 
@@ -254,9 +251,9 @@ begin
   DXDraw.surface.canvas.textout(DXDraw.surface.canvas.TextWidth(' Pos_X='+inttostr(round(v3d_view.position.x))+
   ' Pos_Y='+inttostr(round(v3d_view.position.y))+
   ' Pos_Z='+inttostr(round(v3d_view.position.z)))+80, DXDraw.SurfaceHeight-20,
-  ' A='+inttostr(round(radtodeg(v3d_view.angle.x)) mod 360)+'°'+
-  ' B='+inttostr(round(radtodeg(v3d_view.angle.y)) mod 360)+'°'+
-  ' G='+inttostr(round(radtodeg(v3d_view.angle.z)) mod 360)+'°');
+  ' A='+inttostr(round(radtodeg(v3d_view.angle.x)) mod 360)+'ï¿½'+
+  ' B='+inttostr(round(radtodeg(v3d_view.angle.y)) mod 360)+'ï¿½'+
+  ' G='+inttostr(round(radtodeg(v3d_view.angle.z)) mod 360)+'ï¿½');
 
 
  DisplayHelp;
@@ -399,8 +396,6 @@ begin
    DXDraw.surface.canvas.Font.Color := clLime;
    DXDraw.surface.canvas.Font.Style := [fsBold];
 
-   helprouter1.Helpfile := ExtractFileDir(Application.ExeName)+'\'+'help\lab3d.chm';
-
    opendialog1.InitialDir := ExtractFileDir(Application.ExeName);
    savedialog1.InitialDir := ExtractFileDir(Application.ExeName);
 end;
@@ -477,7 +472,6 @@ begin
   for i:=0 to v3d_world.object_count-1 do
     frmObjInspector.AddObject(v3d_world.objects[i]^);
  helpidx := 1;
- btBeeper1.PlayPresetSound(psDaze);
  end;
 end;
 
@@ -502,19 +496,6 @@ begin
  v3d_simulation := false;
 
  SimulationONOFF1.checked := false;
-end;
-
-procedure TForm1.Rubriquedaide1Click(Sender: TObject);
-begin
- if not fileexists(helprouter1.Helpfile) then
- begin
-    MessageDlg('Le fichier d''aide de Lab3D (lab3d.chm) n''a pas pu être trouve.'#10#13+
-    'Veuillez le placer dans le sous repertoire "help" du dossier d''installation de Lab3D'#13#10+
-    'ou lancez-le manuellement.', mtError, [mbOK], 0);
-    exit;
- end;
-
- HelpRouter1.HelpContent;
 end;
 
 procedure TForm1.FormKeyDown(Sender: TObject; var Key: Word;
@@ -601,7 +582,6 @@ end;
 procedure TForm1.FormShow(Sender: TObject);
 begin
  helpidx := 0;
- btBeeper1.PlayPresetSound(psWelcome);
 
  TEX_AddTextureFromRessource('LAB3D_TEX1');
  TEX_AddTextureFromRessource('LAB3D_TEX2');

@@ -43,8 +43,8 @@ OutputDir=
 UnitOutputDir=
 PackageDLLOutputDir=
 PackageDCPOutputDir=
-SearchPath=
-Packages=Vclx40;Vcl40;tlib40;VCLIDE40;Vcldb40;VclSmp40;WinshoesPkgD4;acm;DelphiX_for4;colli;RxCtl4;vcldbx40;Qrpt40
+SearchPath=C:\Users\Vitaly\Downloads\DelphiX2000_0717j\Source;C:\Program Files (x86)\EHS\DelphiX2000_0717j\Source
+Packages=Vclx40;Vcl40;tlib40;VCLIDE40;Vcldb40;VclSmp40;WinshoesPkgD4;acm;colli;RxCtl4;vcldbx40;Qrpt40
 Conditionals=
 DebugSourceDirs=
 UsePackages=0
@@ -57,7 +57,7 @@ AutoIncBuild=1
 MajorVer=1
 MinorVer=0
 Release=0
-Build=19
+Build=27
 Debug=0
 PreRelease=1
 Special=0
@@ -68,18 +68,17 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=ChipounovSoftware
 FileDescription=Lab3D
-FileVersion=1.0.0.19
+FileVersion=1.0.0.27
 InternalName=Lab3D
 LegalCopyright=Copyright 2002-2003 CHIPOUNOV Vitaly
 LegalTrademarks=
 OriginalFilename=
 ProductName=Lab3D
 ProductVersion=1.0.0.0
-Comments=Logiciel de simulation de phénomènes physiques
+Comments=Logiciel de simulation de ph?nom?nes physiques
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
-[HistoryLists\hlOutputDirectorry]
-Count=2
-Item0=\release\
-Item1=release
+[HistoryLists\hlSearchPath]
+Count=1
+Item0=C:\Users\Vitaly\Downloads\DelphiX2000_0717j\Source;C:\Program Files (x86)\EHS\DelphiX2000_0717j\Source

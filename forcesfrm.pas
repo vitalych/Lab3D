@@ -24,8 +24,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ComCtrls, StdCtrls, Buttons, basecombo, ComboBox, glyphcombo, EditExp,
-  OfficeBalloon, vector, unite_3d, objets3d;
+  ComCtrls, StdCtrls, Buttons, EditExp,
+  vector, unite_3d, objets3d;
 
 type
 
@@ -53,7 +53,6 @@ D3D_ForceInfo=record
     Label8: TLabel;
     Label9: TLabel;
     lstObjects: TComboBox;
-    ksoOfficeBalloon1: TksoOfficeBalloon;
     Button1: TButton;
     procedure lstForceListSelectItem(Sender: TObject; Item: TListItem;
       Selected: Boolean);
@@ -66,9 +65,9 @@ D3D_ForceInfo=record
     procedure lstObjectsChange(Sender: TObject);
     procedure Button1Click(Sender: TObject);
   private
-    { Déclarations privées}
+    { Dï¿½clarations privï¿½es}
   public
-    { Déclarations publiques}
+    { Dï¿½clarations publiques}
     force_struct:array[0..11] of D3D_ForceInfo;
     force_sapply:array[0..11] of boolean;
     procedure UpdateObjectsList;
@@ -108,7 +107,7 @@ begin
   if idx <> -1 then
   lstObjects.ItemIndex := idx
   else
-   ksoOfficeBalloon1.MessageDlg('L''objet "'+item.SubItems.Strings[6]+'"'+
+   MessageDlg('L''objet "'+item.SubItems.Strings[6]+'"'+
    ' n''existe pas dans l''environnement actuel.'#13#10'Vous ne pouvez pas par consequent'
    +' lui appliquer de force.'#13#10'Veuillez en choisir un autre dans la liste.',
    mtWarning, [mbOK], 0);
@@ -147,7 +146,7 @@ begin
             lstForceList.Selected.SubItems[0] := edtx.Text;
             force_struct[lstForceList.Selected.Index].X := strtoint(edtx.Text);
          except
-            ksoOfficeBalloon1.MessageDlg('Vous devez entrer une valeur entiere'+
+            MessageDlg('Vous devez entrer une valeur entiere'+
             ' pour X', mtError, [mbOK],0);
             exit;
          end;
@@ -159,7 +158,7 @@ begin
             lstForceList.Selected.SubItems[1] := edty.Text;
             force_struct[lstForceList.Selected.Index].Y := strtoint(edty.Text);
          except
-            ksoOfficeBalloon1.MessageDlg('Vous devez entrer une valeur entiere'+
+            MessageDlg('Vous devez entrer une valeur entiere'+
             ' pour Y', mtError, [mbOK],0);
             exit;
          end;
@@ -171,7 +170,7 @@ begin
             lstForceList.Selected.SubItems[2] := edtz.Text;
             force_struct[lstForceList.Selected.Index].z := strtoint(edtz.Text);
          except
-            ksoOfficeBalloon1.MessageDlg('Vous devez entrer une valeur entiere'+
+            MessageDlg('Vous devez entrer une valeur entiere'+
             ' pour Z', mtError, [mbOK],0);
             exit;
          end;
@@ -205,7 +204,7 @@ begin
           lstForceList.Selected.SubItems[5] := tmp;
           force_struct[lstForceList.Selected.Index].theta := strtofloat(tmp);
        except
-          ksoOfficeBalloon1.MessageDlg('Vous devez entrer une expression valide.',
+          MessageDlg('Vous devez entrer une expression valide.',
           mtError, [mbOK, mbHelp], 0);
           TEditExp(Sender).SetFocus;
               Exit;
@@ -230,7 +229,7 @@ begin
           lstForceList.Selected.SubItems[4] := tmp;
           force_struct[lstForceList.Selected.Index].phi := strtofloat(tmp);
        except
-          ksoOfficeBalloon1.MessageDlg('Vous devez entrer une expression valide.',
+          MessageDlg('Vous devez entrer une expression valide.',
           mtError, [mbOK, mbHelp], 0);
           TEditExp(Sender).SetFocus;
               Exit;

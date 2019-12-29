@@ -13,7 +13,8 @@ uses
   texture in 'texture.pas',
   physique in 'physique.pas',
   vector in 'vector.pas',
-  forcesfrm in 'forcesfrm.pas' {frmForces};
+  forcesfrm in 'forcesfrm.pas' {frmForces},
+  EditExp in 'EditExp\EDITEXP.PAS';
 
 {$R *.RES}
 

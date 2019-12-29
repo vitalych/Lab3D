@@ -24,8 +24,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ExtCtrls, Buttons, unite_3d, Grids, Basecombo, ComboBox,
-  glyphcombo, ImgList,  ComCtrls, OfficeHint, OfficeBalloon,
+  StdCtrls, ExtCtrls, Buttons, unite_3d, Grids,
+ ImgList,  ComCtrls,
   editexp, vector, matrix;
 
 type
@@ -35,11 +35,11 @@ type
     btnDeleteObj: TSpeedButton;
 
     ImageList1: TImageList;
-    cbList: TksoGlyphComboBox;
+
     ScrollBox1: TScrollBox;
-    ksoOfficeBalloon1: TksoOfficeBalloon;
     btnSetCond: TSpeedButton;
     btnReturnToCond: TSpeedButton;
+    cbList: TComboBox;
     procedure cbListChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure EditsOnKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -48,12 +48,12 @@ type
     procedure btnSetCondClick(Sender: TObject);
     procedure btnReturnToCondClick(Sender: TObject);
   private
-    { Déclarations privées}
+    { Dï¿½clarations privï¿½es}
     first_time:integer;
 
     //propertygrid1:TStringList;
   public
-    { Déclarations publiques}
+    { Dï¿½clarations publiques}
     obj_count:integer;
     propertygrid1:TStringList;
     procedure objinsp_reset;
@@ -185,7 +185,7 @@ begin
         physparam.frottements := strtofloat(edits[PropertyGrid1.IndexOf('Frottements')].Text);
          physparam.masse := strtofloat(edits[PropertyGrid1.IndexOf('Masse')].Text);
        //except
-       //   ksoOfficeBalloon1.MessageDlg('Vous devez entrer un nombre entier ou decimal valide.'#13#10+
+       //   MessageDlg('Vous devez entrer un nombre entier ou decimal valide.'#13#10+
        //   'Utilisez la virgule a la place du point!', mtError, [mbOK, mbHelp], 10);
        //end;
   end;
@@ -287,7 +287,7 @@ begin
           TEditExp(sender).Text := tmp;
           TEditExp(sender).Tag := 0;
        except
-          ksoOfficeBalloon1.MessageDlg('Vous devez entrer une expression valide.',
+             MessageDlg('Vous devez entrer une expression valide.',
           mtError, [mbOK, mbHelp], 0);
           TEditExp(Sender).SetFocus;
               Exit;
@@ -300,7 +300,7 @@ begin
         begin
            if TEditExp(Sender).Text = cbList.Items.Names[cbList.ItemIndex] then
            begin
-              ksoOfficeBalloon1.MessageDlg('Un objet avec ce nom existe deja.'#13#10+
+              MessageDlg('Un objet avec ce nom existe deja.'#13#10+
               'Vous devez choisir un nom unique!', mtError, [mbOK], 0);
               TEditExp(Sender).SetFocus;
               Exit;
@@ -312,7 +312,7 @@ begin
            UpdateObjectProperties(cbList.ItemIndex);
            TEditExp(sender).Tag := 0;
         except
-             ksoOfficeBalloon1.MessageDlg('Vous devez entrer un nombre entier ou decimal valide.'#13#10+
+             MessageDlg('Vous devez entrer un nombre entier ou decimal valide.'#13#10+
              'Utilisez la virgule a la place du point!', mtError, [mbOK, mbHelp], 10);
              TEditExp(Sender).SetFocus;
              exit;
@@ -352,7 +352,7 @@ var
 begin
      if v3d_world.object_count = 0 then
       begin
-        ksoOfficeBalloon1.MessageDlg('Aucun objet a supprimer !', mtError,
+        MessageDlg('Aucun objet a supprimer !', mtError,
         [mbOK],0);
         exit;
       end;
