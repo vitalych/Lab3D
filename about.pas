@@ -27,15 +27,10 @@ uses Windows, SysUtils, Classes, Graphics, Forms, Controls, StdCtrls, Buttons, E
 
 type
   TAboutBox = class(TForm)
-    Panel1: TPanel;
-    Version: TLabel;
-    Copyright: TLabel;
     Image1: TImage;
-    Image2: TImage;
-    Image3: TImage;
-    Image4: TImage;
-    Label1: TLabel;
-    ActionList1: TActionList;
+    Memo1: TMemo;
+    BitBtn1: TBitBtn;
+    procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,5 +43,10 @@ var
 implementation
 
 {$R *.DFM}
+
+procedure TAboutBox.BitBtn1Click(Sender: TObject);
+begin
+    Close;
+end;
 
 end.
