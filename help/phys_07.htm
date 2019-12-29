@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>Gestion des collisions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p class="super_title" align="center">La gestion des collisions </p>
+<p class="normal">La gestion des collisions est une part essentielle dans la r&eacute;alisation 
+  de tout moteur 3D. Il existe beaucoup de types de collisions avec des formes 
+  d'objets tr&egrave;s vari&eacute;es. D&eacute;terminer le point exact de la 
+  collision entre deux objets quelconques peut vite se r&eacute;v&eacute;ler &ecirc;tre 
+  un casse-t&ecirc;te. M&ecirc;me dans DirectX, la gestion des collisions n'est 
+  pas impl&eacute;ment&eacute;e, car tout n'est pas pr&eacute;visible: chaque 
+  programmeur doit d&eacute;finir tout seul les types de collisions qu'il veut 
+  utiliser et se servir de librairies pr&eacute;programm&eacute;es g&eacute;rant 
+  la collision entre des objets simples (cubes, sph&egrave;res, etc...). </p>
+<p class="normal">En ce qui nous concerne, nous avons choisi d'impl&eacute;menter 
+  la collision sph&egrave;re/surface, relativement simple &agrave; mettre en &#156;uvre.</p>
+<p class="grand_parag">1. D&eacute;terminer s'il y a collision</p>
+<p class="normal">La m&eacute;thode la plus simple consiste &agrave; prendre deux 
+  points sur la sph&egrave;re, en g&eacute;n&eacute;ral le centre de masse et 
+  un point de la surface, et analyser en permanence leur position par rapport 
+  &agrave; la surface.</p>
+<p class="normal">Pour cela, il faut avoir calcul&eacute; l'&eacute;quation du 
+  plan repr&eacute;sentant la surface: Ax+By+Cz+D=0. La normale &agrave; ce plan 
+  est alors le vecteur de coordonn&eacute;es (A, B, C).</p>
+<p class="normal">La distance d'un point de la sph&egrave;re est alors d&eacute;termin&eacute;e 
+  par la formule suivante, r&eacute;dig&eacute;e en pseudo-code:</p>
+<p class="normal"><font face="courier new">distance = produit_scalaire(surface.normale, 
+  point.position) + D;</font></p>
+<p class="normal"><font face="courier new"><img src="pics/coldet2.gif" width="150" height="150"></font></p>
+<p class="normal">La formule peut para&icirc;tre bizarre. Souvenez-vous simplement 
+  que le produit scalaire fait intervenir le cosinus et que la configuration que 
+  nous avons est celle d'un triangle rectangle, comme le montre la figure suivante.</p>
+<p class="normal"><img src="pics/dp3_3.gif" width="200" height="200"></p>
+<p class="normal">Cette distance est repr&eacute;sent&eacute;e par la ligne jaune 
+  (sch&eacute;ma 1) si on prend la position du point &agrave; la surface de la 
+  sph&egrave;re et par la ligne bleue si on prend la position du centre de masse. 
+  Ces distances peuvent &ecirc;tre soit n&eacute;gatives soit positives, en fonction 
+  de la position de la sph&egrave;re par rapport &agrave; la surface (dessus ou 
+  dessous).</p>
+<p class="normal">Si la distance jaune est nulle, alors il y a collision.<br>
+  Si les distances bleue et jaune sont de signe contraire, il y a eu interp&eacute;n&eacute;tration.<br>
+  Sinon, il n'y a pas de collision.</p>
+<p class="grand_parag">2. Les r&eacute;actions face &agrave; une collision</p>
+<p class="normal"><font size="4"><b>a) En cas d'interp&eacute;n&eacute;tration</b></font></p>
+<blockquote>
+  <p class="normal">Dans ce cas on ajoute au vecteur position du centre de la 
+    sph&egrave;re un vecteur ayant la direction de la normale au plan et une norme 
+    &eacute;gale &agrave; la longueur d'interp&eacute;n&eacute;tration, de fa&ccedil;on 
+    &agrave; ce que la sph&egrave;re se repositionne &agrave; la surface et on 
+    traite la cas o&ugrave; il n'y a pas interp&eacute;n&eacute;tration. L'inconv&eacute;nient 
+    de cette m&eacute;thode est qu'elle produit des sauts en cas d'interp&eacute;n&eacute;tration: 
+    on a l'impression que la sph&egrave;re rebondit. Cet effet est fortement att&eacute;nu&eacute; 
+    par la diminution de l'intervalle de temps entre deux images (l'effet est 
+    quasiment invisible &agrave; 70 fps).</p>
+</blockquote>
+<p class="normal"><font size="4"><b>b) Sans interp&eacute;n&eacute;tration</b></font></p>
+<blockquote>
+  <p class="normal">Lorsqu'une boule tombe sur une surface plane et inclin&eacute;e, 
+    elle suit cette surface et ne passe pas &agrave; travers. Il en r&eacute;sulte 
+    que son vecteur vitesse a la direction de cette surface. Ainsi, lors d'une 
+    collision, le nouveau vecteur vitesse est obtenu par projet&eacute; orthogonal 
+    de l'ancien. Cela est possible gr&acirc;ce au vecteur normal de la surface. 
+    Sa norme est telle que si on l'ajoute avec le poids de l'objet, le vecteur 
+    r&eacute;sultant est dans la direction de la surface. De ce vecteur on d&eacute;duit 
+    l'acc&eacute;l&eacute;ration et puis le vecteur vitesse, qui est dans la direction 
+    de la surface.</p>
+  <p class="normal"><img src="pics/forces.png" width="317" height="202"></p>
+  <p class="normal"><b>Remarque</b>: cela reste valable pour une surface non-inclin&eacute;e. 
+    Le vecteur somme des forces est simplement nul et la vitesse est nulle.</p>
+  <p class="normal"><b>Remarque 2</b>: il peut para&icirc;tre &eacute;trange qu'on 
+    se permette de manipuler directement le vecteur vitesse sans passer par l'acc&eacute;l&eacute;ration. 
+    Mais si on le faisait en ex&eacute;cutant toutes les &eacute;tapes (primitive 
+    de l'acc&eacute;l&eacute;ration....), la boule aurait d&eacute;j&agrave; eu 
+    le temps de passer plusieurs fois &agrave; travers. En effet, lorsqu'on applique 
+    une force, la vitesse n'est pas chang&eacute;e instantan&eacute;ment.</p>
+  <p class="normal"><b>Remarque 3:</b> il ne faut surtout pas oublier qu'un plan 
+    est infini et qu'une surface ne l'est pas. On v&eacute;rifie donc d'abord 
+    si la sph&egrave;re peut effectivement entrer en collision. Si elle est &agrave; 
+    deux kilom&egrave;tres d'une minuscule surface, il pourrait &ecirc;tre pr&eacute;judiciable 
+    de signaler une collision, bien que les conditions pr&eacute;c&eacute;dentes 
+    soient remplies. Toutes ces techniques sont utilis&eacute;es dans Lab3D.</p>
+  <p class="normal">&nbsp;</p>
+</blockquote>
+<pre>&nbsp;</pre>
+</body>
+</html>

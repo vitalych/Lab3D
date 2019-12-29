@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>Position, vitesse, acc&eacute;l&eacute;ration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p class="super_title" align="center" >Position, vitesse, acc&eacute;l&eacute;ration</p>
+<p class="grand_parag">1. Travail de d&eacute;rivation</p>
+<blockquote> 
+  <p class="normal">Cela peut para&icirc;tre surprenant, mais on ne peut pas d&eacute;placer 
+    un objet en le poussant. Le fait de le pousser n’affecte pas directement sa 
+    position, ni m&ecirc;me sa vitesse mais d'abord son acc&eacute;l&eacute;ration. 
+    Ces quantit&eacute;s sont donc li&eacute;es entre elles. Voici comment.</p>
+  <p class="normal">Nous allons utiliser des formules applicables dans un milieu 
+    &agrave; une dimension. Le passage &agrave; la troisi&egrave;me n’est qu’une 
+    simple formalit&eacute; que nous aborderons apr&egrave;s.</p>
+  <p class="normal">La d&eacute;riv&eacute;e de la position dans l’espace d’un 
+    point (1 dimension) par rapport au temps nous permet de d&eacute;terminer 
+    sa vitesse. La position est not&eacute;e r.</p>
+  <p> <span class="normal"><img
+src="Physique.files/image002.gif" align=middle hspace=12 v:shapes="_x0000_s1028"> 
+    </span></p>
+  <p class="normal">Si on d&eacute;rive la vitesse par rapport au temps, on obtient 
+    l’acc&eacute;l&eacute;ration du point.</p>
+  <p> <span class="normal"><img
+src="./Physique.files/image004.gif" align=middle hspace=12 v:shapes="_x0000_s1029"> 
+    </span></p>
+  <p class="normal">Ce qui &eacute;quivaut &agrave;&nbsp;:</p>
+  <p> <span class="normal"><img
+src="./Physique.files/image006.gif" v:shapes="_x0000_i1100" align="middle"> </span></p>
+  <p class="normal">On peut tout aussi bien faire l’inverse, en partant de l’acc&eacute;l&eacute;ration 
+    pour d&eacute;terminer la position de l’objet dans l’espace. On utilise pour 
+    cela des primitives.</p>
+  <p class="normal">Admettons que nous voulions trouver le changement de position 
+    de notre objet depuis que nous avons dessin&eacute; sa derni&egrave;re position. 
+    Admettons de plus que l’acc&eacute;l&eacute;ration de notre objet est constante 
+    et vaut, disons, 5 m&egrave;tres par seconde carr&eacute;e. Nous utiliserons 
+    aussi le temps &eacute;coul&eacute; depuis la derni&egrave;re image pour int&eacute;grer 
+    la variable t&nbsp;:</p>
+  <p> <span class="normal"><img
+src="./Physique.files/image008.gif" v:shapes="_x0000_i1083"> </span></p>
+  <p class="normal">L’&eacute;quation ci-dessus nous montre la vitesse en fonction 
+    du temps depuis la derni&egrave;re image. On d&eacute;couvre la constante 
+    d’int&eacute;gration C qui est en fait la vitesse de l’objet qu’on avait &agrave; 
+    l’image pr&eacute;c&eacute;dente. Admettons que l’image pr&eacute;c&eacute;dente 
+    &eacute;tait celle de l’instant t=0 et que la vitesse de l’objet &eacute;tait 
+    alors de 0 m/s. La formule devient alors&nbsp;:</p>
+  <p> <span class="normal"><img
+src="./Physique.files/image010.gif" v:shapes="_x0000_i1084"> </span></p>
+  <p class="normal">Maintenant on int&egrave;gre l’&eacute;quation obtenue pour 
+    obtenir la nouvelle position de l’objet dans notre espace unidimensionnel.</p>
+  <p> <span class="normal"><img
+src="./Physique.files/image012.gif" v:shapes="_x0000_i1085"> </span></p>
+  <p class="normal">On a ainsi obtenu notre position de l’objet pour la deuxi&egrave;me 
+    image. On recommence ainsi 25 fois par seconde (voir plus vite) pour obtenir 
+    les positions suivantes. Il va sans dire que les v(0) et les r(0) seront remplac&eacute;s 
+    par les vitesses et positions obtenues &agrave; l’image proc&eacute;dente, 
+    sinon notre objet ne changera jamais de place. La variable t est bien s&ucirc;r 
+    le temps qui s’est &eacute;coul&eacute; depuis notre derni&egrave;re image.</p>
+  <p>&nbsp;</p>
+</blockquote>
+<p class="grand_parag">2. Que la force soit avec toi...</p>
+<blockquote> 
+  <p class="normal">Maintenant qu’on sait comment obtenir la position d’un objet 
+    &agrave; partir de son acc&eacute;l&eacute;ration, il faudrait savoir comment 
+    l’on obtient cette derni&egrave;re. Souvenez-vous&nbsp;: pousser un objet 
+    affecte seulement son acc&eacute;l&eacute;ration. «&nbsp;Pousser&nbsp;» est 
+    ici un euph&eacute;misme pour «&nbsp;appliquer une force&nbsp;».</p>
+  <p class="normal">Les lois de Newton nous indiquent que la force est la d&eacute;riv&eacute;e 
+    de la masse fois la vitesse. La masse multipli&eacute;e par la vitesse est 
+    appel&eacute;e «&nbsp;le moment lin&eacute;aire&nbsp;», not&eacute; p.</p>
+  <p> <span class="normal"><img
+src="./Physique.files/image014.gif" v:shapes="_x0000_i1082"> </span></p>
+  <p class="normal">La masse m est une constante donc elle sort de la d&eacute;riv&eacute;e. 
+    Ainsi, on obtient la c&eacute;l&egrave;bre &eacute;quation F=ma. F est en 
+    Newtons, m en kilogrammes et a en m/s<sup>2</sup>.</p>
+  <p class="normal">La formule obtenue est parfaite pour un corps r&eacute;duit 
+    &agrave; un seul point. Le probl&egrave;me est que cela n’existe pas en pratique. 
+    En effet, on travaille avec des objets volumineux comme des sph&egrave;res, 
+    des cubes, etc... constitu&eacute;s d’un tr&egrave;s grand nombre de points. 
+    Il faut donc d’autres m&eacute;thodes.</p>
+  <p class="normal">D’abord, assimilons notre corps &agrave; un assemblage de 
+    points ayant chacun une masse. On d&eacute;finit le moment total d’un corps 
+    P<sub>T</sub> comme la somme de tous les moments lin&eacute;aires de tous les points 
+    qui composent ce corps.</p>
+  <p> <span class="normal"><img
+src="./Physique.files/image016.gif" v:shapes="_x0000_i1079"> (Eq. 1)</span></p>
+  <p class="normal">m est la masse de chaque point et v sa vitesse.</p>
+  <p class="normal">On peut grandement simplifier l’analyse de la dynamique des 
+    corps rigides en introduisant un point nomm&eacute; «&nbsp;centre de masse&nbsp;» 
+    (CM). Par d&eacute;finition, le centre de masse, ou centre de gravit&eacute;, 
+    est le barycentre de tous les points qui composent ce corps pond&eacute;r&eacute;s 
+    par la masse totale du corps M.</p>
+  <p> <span class="normal"><img
+src="Physique.files/image018.gif" v:shapes="_x0000_i1080"> (Eq. 2)</span></p>
+  <p class="normal">En utilisant cette d&eacute;finition du centre de masse, on 
+    peut simplifier l’&eacute;quation 1 en multipliant les deux c&ocirc;t&eacute;s 
+    de l’&eacute;quation 2 par M, puis en d&eacute;rivant le tout.</p>
+  <p> <span class="normal"><img
+src="./Physique.files/image020.gif" v:shapes="_x0000_i1081"> (Eq. 3)</span></p>
+  <p class="normal">Le c&ocirc;t&eacute; droit de l’&eacute;quation 3 est le moment 
+    total d&eacute;fini par l’&eacute;quation 1. Maintenant, regardez le c&ocirc;t&eacute; 
+    gauche&nbsp;: c’est la vitesse du centre de masse multipli&eacute; par la 
+    masse totale de l’objet. Ainsi, on obtient&nbsp;:</p>
+  <p> <span class="normal"><img
+src="./Physique.files/image022.gif" v:shapes="_x0000_i1078"> (Eq. 4)</span></p>
+  <p class="normal">L’&eacute;quation 4 dit que le moment lin&eacute;aire total 
+    est &eacute;gal &agrave; la masse totale multipli&eacute;e par la vitesse 
+    du centre de masse. Cela veut dire qu’il n’y a plus besoin d’effectuer la 
+    somme de l’&eacute;quation 1 pour trouver le moment tant qu’on conna&icirc;t 
+    la masse totale de l’objet ainsi que l’emplacement et la vitesse du centre 
+    de masse. </p>
+  <p class="normal">En pratique, cela signifie que pour un corps homog&egrave;ne, 
+    son centre de masse est situ&eacute; en son centre, par exemple au centre 
+    d’une sph&egrave;re &agrave; r&eacute;partition sph&eacute;rique de masse 
+    ou &agrave; l’intersection des diagonales d’un cube. On peut donc assimiler 
+    tous les corps simples &agrave; des points. Ainsi, on peut dire que toutes 
+    les forces qui agissent sur lui agissent sur son centre de gravit&eacute;. 
+    De m&ecirc;me, on ne prendra en compte pour le calcul de sa vitesse que l’acc&eacute;l&eacute;ration 
+    du centre de gravit&eacute;.</p>
+  <p class="normal">L&agrave; o&ugrave; cela devient plus subtil, c’est lorsqu’on 
+    veut simuler la rotation du corps sur lui-m&ecirc;me. A ce moment, il faut 
+    tenir compte de l’endroit o&ugrave; est appliqu&eacute;e la force et ne pas 
+    se contenter de la placer au centre de gravit&eacute;. Ceci sera l’objet de 
+    la prochaine section.</p>
+</blockquote>
+<b><i><br clear=all style='page-break-before:always'>
+</i></b> 
+<p class="grand_parag">3. Application &agrave; la 3D</p>
+<blockquote> 
+  <p class="normal">Toutes les formules que nous venons de voir restent les m&ecirc;mes 
+    en 3D, &agrave; la seule diff&eacute;rence pr&egrave;s qu’on travaille d&eacute;sormais 
+    avec des vecteurs &agrave; trois dimensions (x, y et z). La d&eacute;rivation 
+    s’effectue de mani&egrave;re semblable (on d&eacute;rive les trois coordonn&eacute;es 
+    par rapport &agrave; t) de m&ecirc;me que l’utilisation des primitive&nbsp;: 
+    les constantes qu’on ajoute deviennent simplement des vecteurs, et on ajoute 
+    &agrave; chaque fois les trois coordonn&eacute;es.</p>
+</blockquote>
+</body>
+</html>

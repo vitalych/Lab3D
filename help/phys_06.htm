@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Passage &agrave; la 3D</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p class="super_title" align="center">Passage &agrave; la 3D</p>
+<p style='text-align:justify;' class="normal">Etant donn&eacute; qu’en trois dimensions 
+  le produit vectoriel n’est plus un nombre mais un vecteur, on obtient le r&eacute;sultat 
+  suivant&nbsp;:</p>
+<p > <img
+src="./Physique.files/image054.gif" hspace=12 v:shapes="_x0000_s1027" align=middle> 
+</p>
+<p > <img
+src="./Physique.files/image056.gif" v:shapes="_x0000_i1038" align="middle"> </p>
+<p class="normal" >On constate de plus que la vitesse et l’acc&eacute;l&eacute;ration 
+  angulaire ne sont plus des nombres mais des vecteurs.</p>
+<p class="normal" >La direction de ces vecteurs est l’axe de rotation et leur 
+  norme est la quantit&eacute; de mouvement &agrave; proprement parler, en rad/s 
+  ou en rad/s<sup>2</sup>.</p>
+<p class="normal" >Se pose maintenant la question de savoir de quel angle il faut 
+  tourner l’objet autour de ses axes x, y et z pour repr&eacute;senter le mouvement 
+  angulaire dans le cadre du moteur 3D, c’est-&agrave;-dire comment obtenir &agrave; 
+  partir de la direction et de la norme du vecteur vitesse les bons angles de 
+  rotation.</p>
+<p class="normal" >Voici donc la formule n&eacute;cessaire&nbsp;:</p>
+<p class="normal" >Consid&eacute;rons une rotation r d’axe <img
+src="./Physique.files/image058.gif" v:shapes="_x0000_i1043" align="middle"> d’angle 
+  &#952; qui transforme un point M en M’.</p>
+<p class="normal" >Le vecteur om&eacute;ga doit &ecirc;tre unitaire tel que <img
+src="./Physique.files/image060.gif" v:shapes="_x0000_i1046" align="middle"> .</p>
+<p class="normal" >La transformation est la suivante&nbsp;:</p>
+<p > <span class="normal"><img
+src="./Physique.files/image062.gif" v:shapes="_x0000_i1049"> </span></p>
+<p class="normal" >On en d&eacute;duit les composantes x’, y’ et z’ suivantes, 
+  le tout en factorisant par x, y et z&nbsp;:</p>
+<p > <span class="normal"><img
+src="./Physique.files/image064.gif" v:shapes="_x0000_i1065"> </span></p>
+<p class="normal" >Cette factorisation nous permet de d&eacute;duire la matrice 
+  de transformation suivante&nbsp;:</p>
+<p > <span class="normal"><img
+src="./Physique.files/image066.gif" v:shapes="_x0000_i1063"> </span></p>
+<p class="normal" >On peut facilement constater que si le vecteur vitesse angulaire 
+  est nul, toute la matrice est remplie de z&eacute;ros sauf la diagonale, qui 
+  est remplie de 1 &agrave; cause du cos &#952; et on obtient ainsi la matrice 
+  identit&eacute;&nbsp;: s’il n’y a pas de rotation, on obtient le point initial 
+  &agrave; l’issu de la transformation.</p>
+<p class="normal" >Pour ajouter les angles de rotation d’image en image de telle 
+  fa&ccedil;on &agrave; ce qu’on aie l’impression que l’objet tourne continuellement, 
+  il suffit de multiplier la matrice de rotation de l’image pr&eacute;c&eacute;dente 
+  par celle qu’on a d&eacute;termin&eacute; lors du calcul de l’image en cours.</p>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>Mouvements angulaires</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p class="super_title" align="center">Mouvements angulaires </p>
+<p class="normal" >Les objets du monde r&eacute;el ne subissent rarement que des 
+  translations dans l’espace. Il leur arrive toujours de subir des rotations, 
+  comme pour une balle qui roule sur le sol par exemple, ou alors une balle de 
+  tennis ou de ping pong lanc&eacute;e par un sportif qui peut d&eacute;crire 
+  toutes sortes d’effets angulaires.</p>
+<div align="left"><span class="grand_parag">1. Angle, vitesse et acc&eacute;l&eacute;ration 
+  angulaire</span> </div>
+<blockquote> 
+  <p class="normal">Il existe une relation tr&egrave;s semblable entre ces trois 
+    param&egrave;tres &agrave; celle que nous avons vu pr&eacute;c&eacute;demment&nbsp;:</p>
+  <p> <span class="normal"><img
+src="./Physique.files/image024.gif" v:shapes="_x0000_i1077"> </span></p>
+  <p class="normal">Om&eacute;ga majuscule est l’angle de l’objet (en radians), 
+    om&eacute;ga minuscule est sa vitesse angulaire (rad/s) et alpha est son acc&eacute;l&eacute;ration 
+    angulaire (rad/s<sup>2</sup>).</p>
+  <p class="normal">Le sch&eacute;ma suivant montre la signification de &#937;.</p>
+  <p class="normal"><b>Fig. 1</b></p>
+  <p> <span class="normal"><img width=306 height=306
+src="./Physique.files/image026.jpg" v:shapes="_x0000_i1076"> </span></p>
+  <p class="normal">L’angle &#937; s’obtient &agrave; partir de l’acc&eacute;l&eacute;ration 
+    angulaire de la m&ecirc;me fa&ccedil;on que la position du centre de masse 
+    &agrave; partir d’une acc&eacute;l&eacute;ration lin&eacute;aire.</p>
+  <p class="normal"><b>Remarque</b>&nbsp;: il faut noter qu’en deux dimensions 
+    une vitesse ou une acc&eacute;l&eacute;ration angulaire sont des nombres. 
+    Ce sont des vecteurs quand on passe en trois dimensions. Le passage en 3D 
+    fera l’objet d’une autre rubrique.</p>
+  <p>&nbsp;</p>
+</blockquote>
+<p><span class="grand_parag">2. Vitesse d’un point de l’objet </span> </p>
+<blockquote> 
+  <p class="normal">La question est maintenant de savoir comment d&eacute;terminer 
+    la vitesse d’un point quelconque &agrave; la surface d’un objet en tenant 
+    compte non plus uniquement de la vitesse lin&eacute;aire du centre de masse, 
+    mais &eacute;galement de la vitesse angulaire de cet objet. Cela peut &ecirc;tre 
+    int&eacute;ressant pour r&eacute;agir &agrave; une collision, dont la force 
+    d&eacute;pend de la vitesse des deux points qui entrent en contact.</p>
+  <p class="normal"><b>Fig. 2</b></p>
+  <p> <span class="normal"><img width=306 height=296
+src="./Physique.files/image028.jpg" v:shapes="_x0000_i1071"> </span></p>
+  <p class="normal">La vitesse du point B est &eacute;gale &agrave; <img
+src="./Physique.files/image030.gif" v:shapes="_x0000_i1072" align="middle"> o&ugrave; 
+    &#969; est la vitesse angulaire (rad/s) et r<sub>OB</sub> le rayon de l’objet 
+    – en m&egrave;tres (ici un cercle). Le r&eacute;sultat est la vitesse du point 
+    B en m/s.</p>
+  <p class="normal">On constate que le vecteur vitesse est tangent au cercle au 
+    point B. En fait le vecteur vitesse angulaire est le vecteur rayon «&nbsp;perpendicularis&eacute;&nbsp;» 
+    multipli&eacute; par la vitesse angulaire. Ainsi, on obtient&nbsp;:</p>
+  <p> <span class="normal"><img
+src="./Physique.files/image032.gif" v:shapes="_x0000_i1073" align="middle"> . 
+    La norme de ce vecteur est &eacute;gale &agrave; <img
+src="./Physique.files/image033.gif" v:shapes="_x0000_i1074"> .</span></p>
+  <p class="normal">Ce que nous venons de calculer est la vitesse du point B dans 
+    le r&eacute;f&eacute;rentiel li&eacute; au rep&egrave;re local de l’objet 
+    (O, x<sub>b</sub>, y<sub>b</sub>), tel qu’il est montr&eacute; dans la figure 
+    1. Il s’agit maintenant de d&eacute;terminer sa vitesse dans le r&eacute;f&eacute;rentiel 
+    global (O, x<sub>w</sub>, y<sub>w</sub>).</p>
+  <p class="normal">Il suffit pour ce faire d’ajouter la vitesse du centre d’inertie 
+    de l’objet. Ainsi, notre formule devient&nbsp;:</p>
+  <p> <span class="normal"><img
+src="./Physique.files/image035.gif" v:shapes="_x0000_i1075"> </span></p>
+  <p class="normal">On peut &eacute;claircir tout cela en prenant un exemple simple. 
+    Admettons que le r&eacute;f&eacute;rentiel global (O, x<sub>w</sub>, y<sub>w</sub>) 
+    est une feuille et que l’objet est une gomme. Il est ais&eacute; de comprendre 
+    que la vitesse de la gomme dans le r&eacute;f&eacute;rentiel li&eacute; &agrave; 
+    son rep&egrave;re local d&eacute;pend uniquement de sa vitesse angulaire, 
+    tandis que si on consid&egrave;re son mouvement par rapport &agrave; la feuille, 
+    il faut aussi prendre en compte la vitesse de son centre de masse. Si on veut 
+    maintenant &eacute;tudier le tout par rapport au r&eacute;f&eacute;rentiel 
+    terrestre, il faut tenir compte en plus de la vitesse de la feuille (on suppose 
+    dans l’exemple que la gomme est pos&eacute;e sur la feuille et qu’elle tourne 
+    en restant en contact avec cette feuille).</p>
+  <p class="normal">Comment d&eacute;terminer les vitesses angulaires &agrave; 
+    partir des forces exerc&eacute;es sur l’objet, tel est l’objet du prochain 
+    paragraphe.</p>
+</blockquote>
+</body>
+</html>

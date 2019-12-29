@@ -1,0 +1,113 @@
+<html>
+<head>
+
+<title>Matrices</title>
+
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF">
+<P align="center" class="super_title"> Matrices </p>
+<p style='text-align:justify'><b class="grand_parag"> <span class="grand_parag">1. 
+  G&eacute;n&eacute;ralit&eacute;s </span> </b></p>
+<p style='text-align:justify' class="normal"> Une matrice, c’est un tableau de 
+  r&eacute;els, on parlera de la taille d’une matrice comme on parle de la taille 
+  d’un tableau. C’est un tableau bi-dimensionnel, il est donc constitu&eacute; 
+  de lignes et de colonnes. Une matrice 4x3, c’est un tableau contenant 4 lignes 
+  et 3 colonnes. </p>
+<p style='text-align:justify' class="normal"> Exemple de matrice 4*3&nbsp;: <img
+src="2_Matrices.doc.files/image002.gif" v:shapes="_x0000_i1025" align="middle"> 
+</p>
+<p style='text-align:justify' class="normal"> On dit d’une matrice qu’elle est 
+  carr&eacute;e quand son nombre de lignes est &eacute;gal &agrave; son nombre 
+  de colonnes. </p>
+<p style='text-align:justify' class="normal"> Exemple de matrice carr&eacute;e&nbsp;: 
+  <img
+src="2_Matrices.doc.files/image004.gif" v:shapes="_x0000_i1026" align="middle"> 
+</p>
+<p class="normal"  > En g&eacute;n&eacute;ral, la notation pr&eacute;f&eacute;r&eacute;e 
+  pour les matrices sont les lettres majuscules. C’est ainsi que l’on parlera 
+  de la matrice A, ou B, etc… Quand on dit l’&eacute;l&eacute;ment A(i,j) il s’agit 
+  de l’&eacute;l&eacute;ment du tableau se trouvant &agrave; la ligne i et &agrave; 
+  la colonne j. Les lignes et les colonnes sont num&eacute;rot&eacute;es &agrave; 
+  partir de 1. </p>
+<p style='text-align:justify' class="normal"><b class="grand_parag"> &nbsp;2. 
+  Addition de matrices </b></p>
+<p style='text-align:justify' class="normal"> On peut additionner deux matrices, 
+  &agrave; condition qu’elles soient de m&ecirc;mes tailles (m&ecirc;me nombre 
+  de lignes et m&ecirc;me nombre de colonnes), le r&eacute;sultat &eacute;tant 
+  une troisi&egrave;me matrice o&ugrave; chaque &eacute;l&eacute;ment est la somme 
+  des &eacute;l&eacute;ments qui se trouvaient &agrave; la m&ecirc;me position 
+  dans les matrices de d&eacute;part&nbsp;: </p>
+<p style='text-align:justify'> <span class="normal"><img
+src="2_Matrices.doc.files/image006.gif" v:shapes="_x0000_i1027"> </span></p>
+<p style='text-align:justify'>&nbsp;</p>
+<p style='text-align:justify' class="normal"><b class="grand_parag"> 3. Multiplications 
+  de matrices </b></p>
+<p style='text-align:justify' class="normal"> On peut surtout multiplier deux 
+  matrices. Malgr&eacute; ce que l’on pourrait supposer, &ccedil;a n’est pas du 
+  tout la m&ecirc;me chose que l’addition. </p>
+<p style='text-align:justify' class="normal">Supposons que A est une matrice <img
+src="2_Matrices.doc.files/image008.gif" v:shapes="_x0000_i1028"> et que B est 
+  une matrice <img
+src="2_Matrices.doc.files/image010.gif" v:shapes="_x0000_i1029"> , tel que A a 
+  le m&ecirc;me nombre de colonnes que B a de lignes. Alors la matrice C=AB est 
+  d&eacute;finie par&nbsp;:</p>
+<p style='text-align:justify'> <span class="normal"><img
+src="2_Matrices.doc.files/image012.gif" v:shapes="_x0000_i1030"> </span></p>
+<p style='text-align:justify' class="normal">C’est une matrice de taille <img
+src="2_Matrices.doc.files/image014.gif" v:shapes="_x0000_i1031"> (m&ecirc;me nombre 
+  de lignes que A et m&ecirc;me nombre de colonnes que B). La formule sans le 
+  sigma devient ceci&nbsp;:</p>
+<p style='text-align:justify'> <span class="normal"><img
+src="2_Matrices.doc.files/image016.gif" v:shapes="_x0000_i1032"> </span></p>
+<p style='text-align:justify' class="normal"> On peut aussi dire que l’&eacute;l&eacute;ment 
+  (i,j) de C est le r&eacute;sultat de la multiplication de la ligne i de A par 
+  la colonne j de B. </p>
+<p style='text-align:justify' class="normal"> Pour rendre tout cela plus clair, 
+  rien de tel que de bons exemples&nbsp;: </p>
+<p style='text-align:justify'> <span class="normal"><img
+src="2_Matrices.doc.files/image018.gif" v:shapes="_x0000_i1033"> </span></p>
+<p style='text-align:justify'> <span class="normal"><img
+src="2_Matrices.doc.files/image020.gif" v:shapes="_x0000_i1034"> </span></p>
+<p style='text-align:justify'> <span class="normal"><img
+src="2_Matrices.doc.files/image022.gif" v:shapes="_x0000_i1035"> </span></p>
+<p style='text-align:justify' class="normal"> Bon d’accord, il faut un peu de 
+  pratique... </p>
+<p style='text-align:justify' class="normal"><b> Attention&nbsp;! </b> Contrairement 
+  &agrave; l’addition et contrairement &agrave; la multiplication «&nbsp;classique&nbsp;», 
+  la multiplication matricielle n’est pas commutative. En d’autres termes&nbsp;: 
+</p>
+<p style='text-align:justify'> <span class="normal"><img
+src="2_Matrices.doc.files/image024.gif" v:shapes="_x0000_i1036"> </span></p>
+<p style='text-align:justify' class="normal"><b class="grand_parag"> 4. Transpos&eacute;e 
+  de matrices </b></p>
+<p style='text-align:justify' class="normal"> On parle de la transpos&eacute;e 
+  d’une matrice lorsque l’on a invers&eacute; les lignes et les colonnes. On parle 
+  alors de A’ ou A t </p>
+<p style='text-align:justify' class="normal">La transpos&eacute;e de <img
+src="2_Matrices.doc.files/image026.gif" v:shapes="_x0000_i1037" align="middle"> 
+  donne <img
+src="2_Matrices.doc.files/image028.gif" v:shapes="_x0000_i1038" align="middle"> 
+</p>
+<p style='text-align:justify' class="normal"><b class="grand_parag"> 5. Remarques 
+  </b></p>
+<p style='text-align:justify' class="normal"> On dit d’une matrice qu’elle est 
+  une matrice ligne si elle n’a qu’une seule ligne. De m&ecirc;me, on dira qu’une 
+  matrice est une matrice colonne si elle n’a qu’une seule colonne. La transpos&eacute;e 
+  d’une matrice ligne donne une matrice colonne et vice-versa. </p>
+<p style='text-align:justify' class="normal"> Matrice identit&eacute;. </p>
+<p style='text-align:justify' class="normal"> Une matrice est dite «&nbsp;identit&eacute;&nbsp;» 
+  si sa diagonale est remplie de 1&nbsp;: </p>
+<p style='text-align:justify'> <span class="normal"><img
+src="2_Matrices.doc.files/image030.gif" v:shapes="_x0000_i1039"> </span></p>
+<p style='text-align:justify' class="normal"> L’inverse d’une matrice A, not&eacute;e 
+  A <sup>-1</sup> , est telle que A*A <sup>-1</sup> =I, o&ugrave; I est la matrice identit&eacute;. 
+  En g&eacute;n&eacute;ral on ne parle de matrice inverse que pour les matrices 
+  carr&eacute;es. Une propri&eacute;t&eacute; dit que si A est une matrice carr&eacute;e, 
+  alors A*A<sup> -1</sup> = A <sup>-1</sup> *A=I, ce qui n’&eacute;tait pas &eacute;vident, je vous 
+  rappelle que le produit matriciel n’est pas commutatif. </p>
+<p style='text-align:justify' class="normal"> Voil&agrave; tout ce qu’il faut 
+  savoir sur les matrices afin de comprendre leur utilisation dans le cadre d’un 
+  moteur de rendu 3D. </p>
+</body>
+</html>

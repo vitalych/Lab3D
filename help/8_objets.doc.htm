@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Les objets</title>
+
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+<body lang=RU class="Normal" bgcolor="#FFFFFF">
+<p class="super_title" align="center">Les objets</p>
+<p style='text-align:justify'><span lang=FR>Voici maintenant du concret.</span></p>
+<p style='text-align:justify'><span lang=FR>Une question qui revient souvent est&nbsp;comment 
+  représenter un objet 3D en mémoire, de quoi est-il constitué (de faces&nbsp;? 
+  de vectrices&nbsp;? ...), comment est-il stocké, dans quels types de structures 
+  etc…</span></p>
+<p style='text-align:justify'><span lang=FR>La question à se poser est de savoir 
+  quelles informations doit véhiculer un objet. Il ne doit pas dire où il est 
+  (ce problème étant celui de sa matrice de base), mais bien ce qu’il est. Il 
+  s’agit donc, pour tout ce qui sera renseignements géométriques, d’informations 
+  définies dans l’espace objet. (Comme pour notre rectangle, défini par a et b).</span></p>
+<p style='text-align:justify'><span lang=FR>Un objet est en général défini par 
+  un ensemble de faces, elles-mêmes constituées d’un ensemble de triangles. On 
+  peut sans trop de perte de généralité résumer qu’un objet est un ensemble de 
+  triangles. Bien sûr il n’y a pas que des objets «&nbsp;triangularisés&nbsp;» 
+  en 3D, je veux parler de tout ce qui est courbes et objets que le moteur «&nbsp;comprend&nbsp;», 
+  mais bon, ça sort un peu du cadre de ce texte alors on va gentiment laisser 
+  tomber.</span></p>
+<p style='text-align:justify'><span lang=FR>Vu qu’on sait que notre objet est 
+  un ensemble de triangles, il faut à présent savoir ce qu’est un triangle. Vous 
+  savez sûrement qu’un triangle est défini par trois points. On parlera de trois 
+  vectrices (Vertices, Meshes en anglais). Il s’agit de points dans l’espace (objet) 
+  sur lesquels sont «&nbsp;posés&nbsp;» les triangles.</span></p>
+<p style='text-align:justify'><span lang=FR>Il est conseillé d’avoir un ensemble 
+  de vectrices séparé de l’ensemble des faces (c’est à dire que chaque face pointe 
+  vers trois vectrices, sans les contenir vraiment), car la plupart du temps une 
+  vectrice est utilisée par plus d’un triangle. Ca serait idiot d’avoir deux vectrices 
+  en mémoire qui représentent exactement le même point.</span></p>
+<p style='text-align:justify'><span lang=FR>Une vectrice, finalement, c’est un 
+  quadruplet (x,y,z,t).</span></p>
+<p style='text-align:justify'><span lang=FR>Mais ce n’est pas tout, pour définir 
+  totalement une face (un triangle), on a besoin de quelques renseignements en 
+  plus&nbsp;:</span></p>
+<ul>
+  <li><span lang=FR>La normale en chaque sommet du triangle, pour des calculs 
+    de lumières.</span></li>
+  <li><span lang=FR>Le matériau de cette face.</span></li>
+  <li><span lang=FR>Si le matériau de cette face possède une texture, alors il 
+    faut que chaque sommet possède une coordonnée de texture.</span></li>
+</ul>
+<p style='text-align:justify'><span lang=FR>Avec ces renseignements, nous avons 
+  de quoi afficher un objet à l’écran.</span></p>
+<p><span lang=FR>Comment c’est faisable, c’est l’objet du chapitre suivant, sur 
+  le «&nbsp;pipeline&nbsp;».</span></p>
+<hr>
+<p align="center"><img src="pics/3dlab_cube.png" width="196" height="203"> <img src="pics/lab3d_sphere.png"></p>
+<p align="center">Une cube et une sph&egrave;re ne sont rien d'autre qu'un assemblage 
+  de points, plus ou moins complexe. Ici, vous voyez la repr&eacute;sentation 
+  en fil de fer de ces objets dans Lab3D. Remarquez que Lab3D d&eacute;compose 
+  automatiquement toutes les facettes en triangles.</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img src="pics/asteroide.png" width="239" height="261"></p>
+<p align="center">Un objet peut &ecirc;tre nettement plus complexe, comme ici 
+  un as&eacute;ro&iuml;de, mod&eacute;lis&eacute; dans 3D Studio Max. C'est aussi 
+  un assemblage ordonn&eacute; de sommets.</p>
+</body>
+</html>

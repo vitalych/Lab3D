@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>La technique des courbes </title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p class="super_title" align="center" >La technique des courbes </p>
+<p class="normal" >Cette technique est appel&eacute;e technique des &quot;Nurbs&quot; 
+  en Anglais (Abr&eacute;viation de Non-uniform Rational B-Splines - Famille de 
+  courbes tr&egrave;s souples particuli&egrave;rement utiles pour mod&eacute;liser 
+  des formes gauches).</p>
+<p class="normal" >Nous allons voir maintenant comment mod&eacute;liser la t&ecirc;te 
+  d’un «nurbs character&nbsp;», c’est-&agrave;-dire d’un personnage dessin&eacute; 
+  de courbes libres.</p>
+<p class="normal" >De cette mani&egrave;re, on utilise des courbes pour cr&eacute;er 
+  la t&ecirc;te d’un personnage de dessins anim&eacute;s en 3D. Ces courbes conviennent 
+  bien pour mod&eacute;liser des surfaces organiques de formes libres comme pour 
+  ce personnage&nbsp;:</p>
+<p align=center style='text-align:center'> <span class="normal"><img width=205 height=150
+src="./tpe_celine.files/image053.gif" v:shapes="_x0000_i1025"> </span></p>
+<p class="normal" >Avant tout, la conception de ce personnage de dessins anim&eacute;s 
+  commence avec une esquisse artistique dessin&eacute;e au crayon.</p>
+<p style='text-align:center'> <span class="normal"><img width=240 height=228
+src="./tpe_celine.files/image055.gif" v:shapes="_x0000_i1026"> </span></p>
+<p class="normal" >Un artiste a utilis&eacute; cette esquisse pour cr&eacute;er 
+  ce personnage anim&eacute; arrondi comme «&nbsp;coco le gar&ccedil;on singe&nbsp;»</p>
+<p class="normal" >Cette technique comporte aussi plusieurs &eacute;tapes&nbsp;:</p>
+<p class="grand_parag" >Cr&eacute;er la t&ecirc;te</p>
+<p class="normal" >La t&ecirc;te est la partie la plus complexe du mod&egrave;le 
+  et en m&ecirc;me temps c’est aussi la plus importante car c’est elle qui montre 
+  la personnalit&eacute; du personnage. C’est pour cela que l’explication de cette 
+  technique se limitera &agrave; la t&ecirc;te.</p>
+<p class="normal" >En g&eacute;n&eacute;rale la m&eacute;thode consiste &agrave; 
+  utiliser des courbes pour faire les contours de la moiti&eacute; du visage, 
+  donc on utilise le plan qui permet de le voir de profil, puis ensuite on utilise 
+  l’outil bien pratique du logiciel qui s’appelle le Miroir. Et oui je pense que 
+  vous avez bien compris, cet outil sert en effet &agrave; recr&eacute;er le deuxi&egrave;me 
+  c&ocirc;t&eacute; de la face du personnage en utilisant la technique du miroir, 
+  ce qui signifie tout simplement dans son langage&nbsp;: effectuer une sym&eacute;trie 
+  axiale. Cette technique permet de conserver l’&eacute;quilibre du visage et 
+  en m&ecirc;me temps de gagner du temps&nbsp;! Mais on utilise cet outil seulement 
+  &agrave; la fin. Pour faciliter de nouveau la man&#339;uvre il est possible 
+  de scanner l’esquisse de l’artiste et de la placer au second plan de la vue 
+  de profil&nbsp;; ainsi on peut utiliser celle-ci comme aide pour effectuer les 
+  contours gr&acirc;ce aux courbes.</p>
+<p class="normal" >Voici les &eacute;tapes du logiciel&nbsp;:</p>
+<p class="normal" ><b>D&eacute;j&agrave; on commence par faire le contour de la 
+  t&ecirc;te en courbes&nbsp;:</b></p>
+<p > <span class="normal"><img width=287 height=192
+src="./tpe_celine.files/image057.gif" hspace=12 v:shapes="_x0000_s1080"><img width=299 height=203
+src="./tpe_celine.files/image059.jpg" hspace=12 v:shapes="_x0000_s1078"></span></p>
+<p class="normal" ><img width=299 height=197
+src="./tpe_celine.files/image063.gif" hspace=12 v:shapes="_x0000_s1079"><img width=288 height=192 src="./tpe_celine.files/image061.gif" v:shapes="_x0000_s1081"><br clear=ALL>
+</p>
+<p class="normal" >Les courbes au dessus de l’objet incluent les contours et en 
+  m&ecirc;me temps les surfaces, c’est pour cela que cette technique est assez 
+  difficile et elle n&eacute;cessite d’avoir le logiciel bien en main avant toute 
+  pratique.</p>
+<p class="normal" >On commence par cr&eacute;er les contours du profil puis apr&egrave;s 
+  on scanne une image de la face de Coco pour ajuster et harmoniser les traits 
+  du profil et de la face car ils ne sont pas exactement compatibles. A la fin, 
+  on va obtenir un visage en fils de fer.</p>
+<p class="normal" >Ensuite on ajoute une texture sur cette moiti&eacute; de visage 
+  en trois dimensions afin de pouvoir visionner la forme exacte du visage et faire 
+  des modifications si n&eacute;cessaire avant la suite. Cette texture est aussi 
+  indispensable ensuite car on va faire les yeux.</p>
+<div align="center"><span class="normal">&nbsp; <img width=288 height=228 src="./tpe_celine.files/image065.jpg" v:shapes="_x0000_s1083"><br clear=ALL>
+  </span> </div>
+<p class="normal" ><b>Maintenant on cr&eacute;e les yeux&nbsp;:</b></p>
+<p class=MsoBodyText2><span class="normal">Les yeux commencent avec une courbe 
+  en surface que l’on utilise ensuite comme base pour le bombement. En premier 
+  lieu on s&eacute;lectionne la surface voulue pour les yeux sur la t&ecirc;te 
+  en 3D&nbsp;:</span></p>
+<p align=center style='text-align:center'> <span class="normal"><img width=240 height=192
+src="./tpe_celine.files/image067.jpg" v:shapes="_x0000_i1027"> </span></p>
+<p class="normal" >Puis ensuite on se reporte sur la vue en profil pour faire 
+  les courbes voulues&nbsp;:</p>
+<p align=center style='text-align:center'> <span class="normal"><img width=251 height=188
+src="./tpe_celine.files/image069.gif" v:shapes="_x0000_i1028"> </span></p>
+<p class="normal" >Apr&egrave;s les contours effectu&eacute;s on lobe la surface 
+  avec les outils du logiciel&nbsp;:</p>
+<p align=center style='text-align:center'> <span class="normal"><img width=244 height=186
+src="./tpe_celine.files/image071.jpg" v:shapes="_x0000_i1029"> </span></p>
+<p class="normal" > <b>L’&eacute;tape suivante est la cr&eacute;ation des oreilles&nbsp;:</b></p>
+<p class="normal" >Ce sont les derniers d&eacute;tails avant l’utilisation de 
+  l’outil miroir .Le contour de l’oreille a &eacute;t&eacute; cr&eacute;&eacute; 
+  de la m&ecirc;me fa&ccedil;on que le contour de la t&ecirc;te. Ensuite on cr&eacute;e 
+  une surface en ajoutant de nouveau une texture&nbsp;:</p>
+<div align="center"><span class="normal"><img width=264 height=180 src="./tpe_celine.files/image073.jpg"
+v:shapes="_x0000_s1084"> <img width=216 height=276
+src="./tpe_celine.files/image075.gif" v:shapes="_x0000_s1086"> </span> </div>
+<p > <span class="normal"><img
+width=32 height=32 src="./tpe_celine.files/image078.gif" v:shapes="_x0000_i1032"> 
+  <img
+width=32 height=32 src="./tpe_celine.files/image079.gif" v:shapes="_x0000_i1033"> 
+  </span></p>
+<p class="normal" > <b>Ensuite arrive l’utilisation de l’outil miroir&nbsp;:</b></p>
+<table width="75%" border="1" align="center">
+  <tr> 
+    <td> 
+      <p class="normal"><img width=265 height=193
+  src="./tpe_celine.files/image083.jpg" v:shapes="_x0000_s1088"> </p>
+      <p class="normal">Avant l’utilisation du miroir</p>
+    </td>
+    <td> 
+      <p class="normal"><img width=233 height=228
+  src="./tpe_celine.files/image082.gif" v:shapes="_x0000_s1087"> </p>
+      <p class="normal">Apr&egrave;s</p>
+    </td>
+  </tr>
+</table>
+<p >&nbsp;</p>
+<p class="normal" >Ensuite on relie les deux moiti&eacute;s, pour cela on retire 
+  la texture et on connecte les courbes avec des sommets&nbsp;:</p>
+<div align="center"> 
+  <p><span class="normal"><img width=252 height=212 src="./tpe_celine.files/image086.jpg"
+v:shapes="_x0000_s1089"> <img width=295 height=205 src="./tpe_celine.files/image084.gif" v:shapes="_x0000_s1090"></span></p>
+  <p><span class="normal"><br clear=ALL>
+    </span> </p>
+</div>
+<p class="normal" >Enfin quand tout est bien connect&eacute; on rajoute la structure 
+  et les couleurs et la t&ecirc;te est finie&nbsp;:</p>
+<p align=center style='text-align:center'> <span class="normal"><img width=205 height=154
+src="./tpe_celine.files/image087.gif" v:shapes="_x0000_i1034"> <img
+width=32 height=32 src="./tpe_celine.files/image088.gif" v:shapes="_x0000_i1035"> 
+  <img width=205 height=154
+src="./tpe_celine.files/image089.gif" v:shapes="_x0000_i1036"></span></p>
+<p align=center style='text-align:center' class="normal">Voil&agrave; ce que donne 
+  l’apparence finale.</p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+; This file is maintained by WHD. Do not modify this file directly.
+;
+; This help project was created with Windows Help Designer V 2.3.1.0
+; *** UNREGISTERED ***
+; Windows Help Designer is copyright (C) 1996, 1998, by Nick Ameladiotis
+; Visit http://www.winhelp.gr for more informations
+;
+[OPTIONS]
+REPORT=Yes
+ERRORLOG=E:\Vitaly\programmation\3dlab\help\lab3d.LOG
+
+[WINDOWS]
+main="", , 0,(255,255,225),(192,192,192),  ; 
+
+[FILES]
+lab3d.RTF
+
+[MAP]
+Topic1=0x1
+Topic2=0x2

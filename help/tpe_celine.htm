@@ -1,0 +1,236 @@
+<html>
+<head>
+
+<title>La technique des polygones</title>
+
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF">
+
+<p class="super_title" align="center">La technique des polygones</p>
+<p class="normal" >Cette technique consiste &agrave; prendre pour chaque partie 
+  du corps une forme g&eacute;om&eacute;trique de base(polygones, sph&egrave;res, 
+  droites et points), et ensuite &agrave; modeler cette structure afin d’obtenir 
+  l’apparence souhait&eacute;e.<br clear=ALL>
+</p>
+<p class="normal" >Voici un exemple de personnage&nbsp;: </p>
+<div align="center"><span class="normal"><img width=377 height=320 src="./tpe_celine.files/image002.jpg" v:shapes="_x0000_s1028" align=center> 
+  </span> </div>
+<p class="normal" ><b><span class="grand_parag">1. La silhouette</span></b></p>
+<p class="normal" >La forme de base de la silhouette a &eacute;t&eacute; dessin&eacute;e 
+  sur plusieurs plans. On polit le torso (sculpture du corps humain sans membres 
+  annexes&nbsp;: t&ecirc;tes, bras et jambes)&nbsp;; on arrondit les traits, pour 
+  cela on peut s'aider en faisant pivoter le polygone.</p>
+
+<div align="center"><span class="normal"><img src="./tpe_celine.files/image004.jpg" v:shapes="_x0000_s1074"><br clear=ALL>
+  &nbsp; <br clear=ALL>
+  </span> </div>
+<p class="normal" >Pour faire les membres on utilise la silhouette de base et 
+  l’on va extraire chaque membre de cette silhouette. Pour chaque partie du corps 
+  on va proc&eacute;der de la m&ecirc;me mani&egrave;re, la m&eacute;thode d’extraction 
+  est tr&egrave;s importante pour cette technique de mod&eacute;lisation. Voyons 
+  en quoi consiste cette m&eacute;thode.</p>
+<p >&nbsp;</p>
+<p class="normal" ><span class="grand_parag">2. Les bras</span></p>
+<p class="normal" ><br clear=ALL>
+  On utilise les sommets d&eacute;j&agrave; pr&eacute;sents sur le torso, on prend 
+  l’un apr&egrave;s l’autre chaque sommet et &agrave; l’aide des bo&icirc;tes 
+  de dialogue et des barres d'outils du logiciel on change la coordonn&eacute;e 
+  de ces points selon la longueur voulue </p>
+<p class="normal" align="center" ><br clear=ALL>
+  <img
+   src="./tpe_celine.files/image007.jpg" v:shapes="_x0000_s1029" width=330 height=204> 
+  <img
+   src="./tpe_celine.files/image008.jpg" v:shapes="_x0000_s1030"></p>
+<p class="normal" >On peut s’il manque des sommets pour la forme voulue en ajouter. 
+  On proc&egrave;de de la m&ecirc;me fa&ccedil;on pour les jambes et pour extraire 
+  le coup.</p>
+<p class="normal" >&nbsp;</p>
+<div align="center">
+  <p><span class="normal"><img width=227 height=189 src="./tpe_celine.files/image010.jpg" v:shapes="_x0000_s1031"><br clear=ALL>
+    <b>Extraction du coup </b></span></p>
+  <p>&nbsp;</p>
+</div>
+<p class="normal" >La cr&eacute;ation des mains se fait par une m&eacute;thode 
+  similaire mais elle est plus complexe c’est pourquoi nous allons voir en d&eacute;tail 
+  les &eacute;tapes de leur cr&eacute;ation.</p>
+<p class="normal" ><b class="grand_parag">3. Les mains</b></p>
+<p class="normal" >Voici les &eacute;tapes de l'explication que donne le logiciel&nbsp;:</p>
+<p class="normal" ><b>1<sup>&egrave;re</sup> Etape&nbsp;: l’extraction de la paume 
+  de la main</b></p>
+<blockquote>
+  <p class="normal">En premier lieu il faut s&eacute;lectionner le polygone pr&eacute;sent 
+    au bout du bras et l’extraire pour cr&eacute;er la paume de la main de la 
+    longueur voulue&nbsp;; pour se faire, il faut comme auparavant changer les 
+    coordonn&eacute;es de chaque sommet.</p>
+</blockquote>
+<p class="normal" ><b>2&egrave;me Etape&nbsp;: l’extraction des doigts</b></p>
+<blockquote>
+  <p class="normal"><b>Pr&eacute;parer l’extraction&nbsp;:</b></p>
+  <p class="normal">On va extraire les doigts mais pour l’instant on a seulement 
+    un large polygone constituant la paume de la main. Pour extraire les doigts 
+    il va falloir couper ce polygone en deux afin d’en avoir un &agrave; gauche 
+    pour l’index et un &agrave; droite pour l’auriculaire. Pour diviser la paume 
+    en deux il faut ajouter encore une fois des nouveaux sommets.</p>
+  <p class="normal">Ensuite il faut connecter les sommets et on obtient alors 
+    deux polygones &agrave; la fin de la main.</p>
+  <p class="normal"><b>L’extraction&nbsp;:</b></p>
+  <p class="normal"><img width=226 height=184 src="./tpe_celine.files/image012.jpg" v:shapes="_x0000_s1032"></p>
+  <p class="normal"><br clear=ALL>
+    Maintenant on va extraire les doigts et le pouce individuellement en inclinant 
+    les polygones afin d’obtenir des doigts distincts ; comme auparavant on change 
+    les coordonn&eacute;es des sommets. <br clear=ALL>
+  </p>
+  <p class="normal">Il faut aussi ajouter des sommets pour faire l’articulation 
+    du doigt afin de permettre le doigt de bouger lors d’une animation.</p>
+</blockquote>
+<h1 class="grand_parag" >4. Finir la main</h1>
+<p class=MsoBodyText ><span class="normal">On peut ensuite affiner la main afin 
+  d’&ecirc;tre satisfait de l’apparence g&eacute;n&eacute;rale. Pour cela on peut 
+  continuer d’ajouter des d&eacute;tails en utilisant les outils du logiciel. 
+  Par exemple on peut ajouter un morceau avant le d&eacute;but de la main pour 
+  affiner le poignet, on peut aussi couper la superficie de la paume pour donner 
+  une meilleure finition de la base du pouce. On peut aussi couper ou ajouter 
+  des rebords aux doigts pour les faire en cinq ou six c&ocirc;t&eacute;s (au 
+  lieu d’extraire les c&ocirc;t&eacute;s).</span></p>
+<p class=MsoBodyText ><span class="normal">Dans l’illustration suivante, le modeleur 
+  a ajout&eacute; un morceau de poignet, coup&eacute; le dessous du pouce et de 
+  la paume de la main avec de multiples sections, et d&eacute;plac&eacute; des 
+  sommets autour pour faire beaucoup de d&eacute;tails.</span></p>
+<table cellpadding=0 cellspacing=0 align=left>
+  <tr> 
+    <td class="Normal">&nbsp;</td>
+  </tr>
+</table>
+<span class="normal"><img width=381 height=193 src="./tpe_celine.files/image014.jpg" v:shapes="_x0000_s1076"><br clear=ALL>
+&nbsp; <br clear=ALL>
+</span> 
+<p class=MsoBodyText ><span class="normal"><b class="grand_parag">5. Finir le 
+  corps</b></span></p>
+<p class=MsoBodyText ><span class="normal">C’est comme les autres fois, m&ecirc;me 
+  technique.</span></p>
+<span class="normal"> <img width=548 height=207 src="./tpe_celine.files/image016.jpg" v:shapes="_x0000_s1077"><br clear=ALL>
+</span> 
+<p class=MsoBodyText >&nbsp;</p>
+<p class=MsoBodyText ><span class="normal"><b class="grand_parag">6. La t&ecirc;te 
+  du personnage</b></span></p>
+<p class="normal"><img width=232 height=172 src="./tpe_celine.files/image020.jpg" v:shapes="_x0000_s1036"><img width=230 height=170 src="./tpe_celine.files/image018.jpg" v:shapes="_x0000_s1037"></p>
+<p class="normal"><br clear=ALL>
+  Pour la t&ecirc;te du personnage, &agrave; la place d’utiliser une bo&icirc;te 
+  que l’on d&eacute;formerait, on peut commencer avec une ligne et ensuite la 
+  faire pivoter pour obtenir la forme initiale. On peut aussi commencer avec une 
+  sph&egrave;re et l’ajuster avec des sommets, mais utiliser une courbe donne 
+  plus de contr&ocirc;le au d&eacute;but et donne des r&eacute;sultats plus rapides&nbsp;! 
+</p>
+<p>&nbsp;</p>
+<p><span class="normal"><b class="grand_parag">7. Les yeux</b></span></p>
+<p class=MsoBodyText ><span class="normal">On va faire les yeux en mod&eacute;lisant 
+  des orbites et en les extrayant de l’int&eacute;rieur&nbsp;.</span></p>
+<p class=MsoBodyText ><span class="normal">On va aussi faire en sorte de sculpter 
+  les orbites afin qu’elles apparaissent rondes.</span></p>
+<blockquote>
+  <p><span class="normal"><b>Les orbites</b></span></p>
+  <p><span class="normal">On choisit en premier lieu un espace pour faire les 
+    yeux et on y ajoute une ligne, ensuite on ajoute des sommets et on va faire 
+    un polygone &agrave; six c&ocirc;t&eacute;s, si possible un hexagone afin 
+    de faciliter ensuite la man&#339;uvre qui va permettre de faire des orbites 
+    rondes.</span></p>
+  <p><span class="normal">On fait ensuite les orbites &agrave; cet endroit en 
+    inclinant et extrayant les polygones &agrave; l’arri&egrave;re de la t&ecirc;te.</span></p>
+  <p><span class="normal"><img width=227 height=145 src="./tpe_celine.files/image022.jpg" v:shapes="_x0000_s1045"><br clear=ALL>
+    &nbsp; <br clear=ALL>
+    </span> </p>
+  <p><span class="normal"><b>Les globes oculaires</b></span></p>
+  <p><span class="normal">C’est une bonne id&eacute;e de cr&eacute;er des globes 
+    oculaires pour &ecirc;tre s&ucirc;r que les paupi&egrave;res soient form&eacute;es 
+    correctement.</span></p>
+  <p><span class="normal">Pour faire les globes oculaires on utilise des sph&egrave;res 
+    que l’on positionne &agrave; l’int&eacute;rieur des orbites. Ensuite on les 
+    relie au visage, pour cela on connecte les r&eacute;seaux du visage aux sph&egrave;res 
+    &agrave; l’aide de sommets (ce travail doit &ecirc;tre effectu&eacute; minutieusement&nbsp;: 
+    on d&eacute;place les sommets autour de la paupi&egrave;re afin que la connexion 
+    soit homog&egrave;ne) <br clear=ALL>
+    </span> </p>
+  <p><b><img width=340 height=149 src="./tpe_celine.files/image024.jpg" v:shapes="_x0000_s1070"></b></p>
+</blockquote>
+<p class="normal" >&nbsp;</p>
+<p class="normal" ><b class="grand_parag">8. Le nez</b></p>
+<p class="normal" >Le nez est l'une des caract&eacute;ristiques du visage les 
+  plus difficiles &agrave; modeler, il y a de nombreux angles et plans diff&eacute;rents 
+  et il peut y avoir beaucoup de d&eacute;tails. Ce personnage a un nez assez 
+  pr&eacute;cis, mais par chance il est simple de le modeler en utilisant la m&eacute;thode 
+  d’extraction des polygones afin faire ressortir l’objet et cr&eacute;er le joint 
+  de la narine. Il y a cependant plusieurs &eacute;tapes&nbsp;:</p>
+<p class="normal"><img width=366 height=142 src="./tpe_celine.files/image026.jpg" v:shapes="_x0000_s1047"></p>
+<blockquote> 
+  <p><br clear=ALL>
+    <span class="normal"><b>Sortir le nez&nbsp;:</b></span></p>
+  <p class="normal"><img width=343 height=132 src="./tpe_celine.files/image028.jpg" v:shapes="_x0000_s1048"><br clear=ALL>
+    &nbsp; <br clear=ALL>
+  </p>
+  <p class="normal"><img width=340 height=126 src="./tpe_celine.files/image030.jpg" v:shapes="_x0000_s1050"></p>
+  <p class="normal"><br clear=ALL>
+    Ensuite pour affiner le nez on le sectionne l&eacute;g&egrave;rement en diverses 
+    parties, comme pour la main, et on ajoute des sommets. </p>
+</blockquote>
+<p class="normal"><span class="normal"><br clear=ALL>
+  &nbsp; </span><br clear=ALL>
+  <br clear=ALL>
+  <b class="grand_parag">9. L’oreille</b></p>
+<p> <span class="normal"><img width=347 height=120 src="./tpe_celine.files/image032.jpg" v:shapes="_x0000_s1051"></span></p>
+<p class="normal"><img width=347 height=132 src="./tpe_celine.files/image034.jpg" v:shapes="_x0000_s1052"><br clear=ALL>
+  <br clear=ALL>
+</p>
+<p class="normal" >&nbsp;</p>
+<p class="normal" ><b class="grand_parag">10. La bouche</b></p>
+<p class="normal" ><img width=347 height=131 src="./tpe_celine.files/image037.jpg" v:shapes="_x0000_s1056 _x0000_s1057"></p>
+<p >&nbsp;</p>
+<p class="normal" ><b class="grand_parag">11. Attacher le corps et la t&ecirc;te</b></p>
+<p class="normal">On soude ces deux parties en reliant les sommets du coup avec 
+  ceux de la t&ecirc;te pour faire une connexion sans coutures. </p>
+<p class="normal"><img width=381 height=145 src="./tpe_celine.files/image039.jpg" v:shapes="_x0000_s1058"></p>
+<p class="normal"><br clear=ALL>
+</p>
+<p class="normal" ><b class="grand_parag">12. Mettre les accessoires sur la t&ecirc;te</b></p>
+<p class="normal" >La t&ecirc;te est presque compl&egrave;te mais il manque encore 
+  quelques d&eacute;tails tels que les dents, les gencives et les sourcils.</p>
+<p><span class="normal"><br clear=ALL>
+  On peut ajouter les sourcils comme une simple texture mais on peut aussi les 
+  mod&eacute;liser si on veut pouvoir les animer ensuite. Pour cela on utilise 
+  bien s&ucirc;r une forme de base que l’on peut faire avec quelques segments, 
+  et ensuite d&eacute;placer les sommets pour faire tel que c’est montr&eacute; 
+  sur cette photographie&nbsp;: </span></p>
+<p><span class="normal"><img width=340 height=126 src="./tpe_celine.files/image041.jpg" v:shapes="_x0000_s1060"><br clear=ALL>
+  </span> </p>
+<p class="normal" >Tous ces objets peuvent &ecirc;tre cr&eacute;&eacute;s avec 
+  de simples formes g&eacute;om&eacute;triques de base.</p>
+<span class="normal"><img width=340 height=126 src="./tpe_celine.files/image043.jpg" v:shapes="_x0000_s1062"><br clear=ALL>
+&nbsp; <br clear=ALL>
+</span> 
+<p class="normal" >On peut faire aussi une langue en ajoutant une sph&egrave;re 
+  ayant &eacute;t&eacute; aplatie prolong&eacute;e et liss&eacute;e.</p>
+<p class="normal" >Finalement on peut cr&eacute;er une chevelure simple en commen&ccedil;ant 
+  avec une forme contenant beaucoup de segments et ensuite en extrayant une touffe 
+  de cheveux au niveau du front et des favoris sur les c&ocirc;t&eacute;s</p>
+<p class="normal"><img src="tpe_celine.files/image044.png" width="549" height="203"></p>
+<p class="normal"><img width=340 height=126 src="./tpe_celine.files/image046.jpg" v:shapes="_x0000_s1063 _x0000_s1064"><br clear=ALL>
+  &nbsp; <br clear=ALL>
+</p>
+<p class="normal" ><b class="grand_parag">13. Faire les v&ecirc;tements</b></p>
+<p class="normal" >Je parierais que maintenant vous allez savoir comment vous 
+  y prendre car en fait, faire les v&ecirc;tements n’est pas plus compliqu&eacute; 
+  ou original que faire un membre au personnage&nbsp;! Et oui c’est toujours de 
+  la m&ecirc;me mani&egrave;re que l’on proc&egrave;de&nbsp;: on commence avec 
+  une forme de base que l’on mod&egrave;le &agrave; volont&eacute;…</p>
+<p><span class="normal"><img width=322 height=238 src="./tpe_celine.files/image048.jpg" v:shapes="_x0000_s1067"><br clear=ALL>
+  <img width=322 height=239 src="./tpe_celine.files/image050.jpg" v:shapes="_x0000_s1068"><br clear=ALL>
+  &nbsp; <br clear=ALL>
+  <br clear=ALL>
+  Et voil&agrave; vous savez maintenant comment cr&eacute;er un personnage avec 
+  la technique des polygones, enfin la pratique est un peu plus dure&nbsp;!!</span></p>
+<p><span class="normal"> <img width=321 height=141 src="./tpe_celine.files/image052.jpg" v:shapes="_x0000_s1071"> 
+  </span> </p>
+<p class="normal" >Mais il existe d’autres techniques. La section suivante &eacute;tudiera 
+  la m&eacute;thode utilisant des courbes.</p>
+<p class="normal" >&nbsp;</p>
+</html>

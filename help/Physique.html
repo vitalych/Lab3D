@@ -1,0 +1,377 @@
+<html>
+<head>
+
+
+<title>Physique</title>
+
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+<body l bgcolor="#FFFFFF" class="normal">
+<p >Physique</p>
+<p >Maintenant que nous savons comment 
+  fonctionne &agrave; sa base un moteur 3D, c’est-&agrave;-dire comment il fait 
+  pour repr&eacute;senter des objets quelconques &agrave; l’&eacute;cran, nous 
+  allons passer dans le vif du sujet&nbsp;: la simulation de ph&eacute;nom&egrave;nes 
+  physiques. En clair&nbsp;: comment fonctionne une animation r&eacute;aliste. 
+  Vous en avez tous vu dans des jeux un tant soit peu &eacute;volu&eacute;s ou 
+  dans des films d’animation&nbsp;: un monstre re&ccedil;oit une balle dans l’&eacute;paule 
+  et le choc lui fait perdre l’&eacute;quilibre et sous l’effet de la gravit&eacute; 
+  tombe par terre en tournant sur lui-m&ecirc;me.</p>
+<p class=MsoPlainText >Les Math&eacute;matiques ont une part importante dans les 
+  bases d'une animation virtuelle mais il est aussi n&eacute;cessaire d'aborder 
+  diff&eacute;rents ph&eacute;nom&egrave;nes physiques afin de comprendre la totalit&eacute; 
+  de ces animations. C'est pourquoi nous allons reprendre les bases de la physique 
+  ( vitesse, acc&eacute;l&eacute;ration, position d'un objet ou bien encore d'un 
+  personnage dans l'espace en fonction du temps...) au niveau de la premi&egrave;re, 
+  deuxi&egrave;me et troisi&egrave;me dimension.</p>
+<p style='text-align:justify;'>On peut rendre le mouvement aussi complexe que 
+  l’on souhaite en prenant en compte une infinit&eacute; de param&egrave;tres. 
+  Mais en ce qui nous concerne, on n’utilisera qu’un tout petit champ de la physique 
+  appel&eacute;«&nbsp;dynamique&nbsp;», et de mani&egrave;re encore plus pr&eacute;cise, 
+  la dynamique des corps solides avec la cin&eacute;matique. La cin&eacute;matique 
+  est l’&eacute;tude de la position d’un corps dans l’espace en fonction du temps. 
+  Elle ne se pr&eacute;occupe pas des causes du mouvement mais seulement du mouvement 
+  lui-m&ecirc;me, contrairement &agrave; la dynamique qui, elle, s’occupe de l’&eacute;tude 
+  des forces et des masses qui permettent aux quantit&eacute;s «&nbsp;cin&eacute;matiques&nbsp;» 
+  d’&eacute;voluer.</p>
+<p >Quelle distance parcourt une balle 
+  de base ball en 10 secondes si elle a une vitesse de 50 km/h et se d&eacute;place 
+  en ligne droite est un probl&egrave;me de cin&eacute;matique. Quelle distance 
+  elle parcourt dans le champ gravitationnel terrestre si je la lance est un probl&egrave;me 
+  de dynamique.</p>
+<h1 class="super_title" align="center">1. Position, vitesse, acc&eacute;l&eacute;ration</h1>
+<p class="grand_parag">1. Travail de d&eacute;rivation</p>
+<blockquote>
+  <p>Cela peut para&icirc;tre surprenant, mais on ne peut pas d&eacute;placer 
+    un objet en le poussant. Le fait de le pousser n’affecte pas directement sa 
+    position, ni m&ecirc;me sa vitesse mais son acc&eacute;l&eacute;ration. Ces 
+    quantit&eacute;s sont donc li&eacute;es entre elles. Voici comment.</p>
+  <p>Nous allons utiliser des formules applicables dans un milieu &agrave; une 
+    dimension. Le passage &agrave; la troisi&egrave;me n’est qu’une simple formalit&eacute; 
+    que nous aborderons apr&egrave;s.</p>
+  <p>La d&eacute;riv&eacute;e de la position dans l’espace d’un point (1 dimension) 
+    par rapport au temps nous permet de d&eacute;terminer sa vitesse.</p>
+  <p> <img
+src="Physique.files/image002.gif" align=middle hspace=12 v:shapes="_x0000_s1028"> 
+  </p>
+  <p>Si on d&eacute;rive la vitesse par rapport au temps, on obtient l’acc&eacute;l&eacute;ration 
+    du point.</p>
+  <p> <img
+src="./Physique.files/image004.gif" align=middle hspace=12 v:shapes="_x0000_s1029"> 
+  </p>
+  <p>Ce qui &eacute;quivaut &agrave;&nbsp;:</p>
+  <p> <img
+src="./Physique.files/image006.gif" v:shapes="_x0000_i1100" align="middle"> </p>
+  <p>On peut tout aussi bien faire l’inverse, an partant de l’acc&eacute;l&eacute;ration 
+    pour d&eacute;terminer la position de l’objet dans l’espace. On utilise pour 
+    cela des primitives.</p>
+  <p>Admettons que nous voulions trouver le changement de position de notre objet 
+    depuis que nous avons dessin&eacute; sa derni&egrave;re position. Admettons 
+    de plus que l’acc&eacute;l&eacute;ration de notre objet est constante et vaut, 
+    disons, 5 m&egrave;tres par seconde carr&eacute;e. Nous utiliserons aussi 
+    le temps &eacute;coul&eacute; depuis la derni&egrave;re image pour int&eacute;grer 
+    la variable t&nbsp;:</p>
+  <p> <img
+src="./Physique.files/image008.gif" v:shapes="_x0000_i1083"> </p>
+  <p>L’&eacute;quation ci-dessus nous montre la vitesse en fonction du temps depuis 
+    la derni&egrave;re image. On d&eacute;couvre la constante d’int&eacute;gration 
+    C qui est en fait la vitesse de l’objet qu’on avait &agrave; l’image pr&eacute;c&eacute;dente. 
+    Admettons que l’image pr&eacute;c&eacute;dente &eacute;tait celle de l’instant 
+    t=0 et que la vitesse de l’objet &eacute;tait alors de 0 m/s. La formule devient 
+    alors&nbsp;:</p>
+  <p> <img
+src="./Physique.files/image010.gif" v:shapes="_x0000_i1084"> </p>
+  <p>Maintenant on int&egrave;gre l’&eacute;quation obtenue pour obtenir la nouvelle 
+    position de l’objet dans notre espace unidimensionnel.</p>
+  <p> <img
+src="./Physique.files/image012.gif" v:shapes="_x0000_i1085"> </p>
+  <p>On a ainsi obtenu notre position de l’objet pour la deuxi&egrave;me image. 
+    On recommence ainsi 25 fois par seconde (voir plus vite) pour obtenir les 
+    positions suivantes. Il va sans dire que les v(0) et les r(0) seront remplac&eacute;s 
+    par les vitesses et positions obtenues &agrave; l’image proc&eacute;dente, 
+    sinon notre objet ne changera jamais de place. La variable t est bien s&ucirc;r 
+    le temps qui s’est &eacute;coul&eacute; depuis notre derni&egrave;re image.</p>
+  <p>&nbsp;</p>
+</blockquote>
+<p class="grand_parag">2. Que la force soit avec toi...</p>
+<blockquote>
+  <p>Maintenant qu’on sait comment obtenir la position d’un objet &agrave; partir 
+    de son acc&eacute;l&eacute;ration, il faudrait savoir comment l’on obtient 
+    cette derni&egrave;re. Souvenez-vous&nbsp;: pousser un objet affecte seulement 
+    son acc&eacute;l&eacute;ration. «&nbsp;Pousser&nbsp;» est ici un euph&eacute;misme 
+    pour «&nbsp;appliquer une force&nbsp;».</p>
+  <p>Les lois de Newton nous indiquent que la force est la d&eacute;riv&eacute;e 
+    de la masse fois la vitesse. La masse multipli&eacute;e par la vitesse est 
+    appel&eacute;e «&nbsp;le moment lin&eacute;aire&nbsp;», not&eacute; p.</p>
+  <p> <img
+src="./Physique.files/image014.gif" v:shapes="_x0000_i1082"> </p>
+  <p>La masse m est une constante donc elle sort de la d&eacute;riv&eacute;e. 
+    Ainsi, on obtient la c&eacute;l&egrave;bre &eacute;quation F=ma. F est en 
+    Newton, m en kilogrammes et a en m/s<sup>2</sup>.</p>
+  <p>La formule obtenue est parfaite pour un corps r&eacute;duit &agrave; un seul 
+    point. Le probl&egrave;me est que cela n’existe pas en pratique. En effet, 
+    on travaille avec des objets volumineux comme des sph&egrave;res, des cubes, 
+    etc... constitu&eacute;s d’un tr&egrave;s grand nombre de points. Il faut 
+    donc d’autres m&eacute;thodes.</p>
+  <p>D’abord, assimilons notre corps &agrave; un assemblage de points ayant chacun 
+    une masse. On d&eacute;finit le moment total d’un corps PT comme la somme 
+    de tous les moments lin&eacute;aires de tous les points qui composent ce corps.</p>
+  <p> <img
+src="./Physique.files/image016.gif" v:shapes="_x0000_i1079"> (Eq. 1)</p>
+  <p>m est la masse de chaque point et v sa vitesse.</p>
+  <p>On peut grandement simplifier l’analyse de la dynamique des corps rigides 
+    en introduisant un point nomm&eacute; «&nbsp;centre de masse&nbsp;» (CM). 
+    Par d&eacute;finition, le centre de masse, ou centre de gravit&eacute;, est 
+    le barycentre de tous les points qui composent ce corps pond&eacute;r&eacute;s 
+    par la masse totale du corps M.</p>
+  <p> <img
+src="./Physique.files/image018.gif" v:shapes="_x0000_i1080"> (Eq. 2)</p>
+  <p>En utilisant cette d&eacute;finition du centre de masse, on peut simplifier 
+    l’&eacute;quation 1 en multipliant les deux c&ocirc;t&eacute;s de l’&eacute;quation 
+    2 par M, puis en d&eacute;rivant le tout.</p>
+  <p> <img
+src="./Physique.files/image020.gif" v:shapes="_x0000_i1081"> (Eq. 3)</p>
+  <p>Le c&ocirc;t&eacute; droit de l’&eacute;quation 3 est le moment total d&eacute;fini 
+    par l’&eacute;quation 1. Maintenant, regardez le c&ocirc;t&eacute; gauche&nbsp;: 
+    c’est la vitesse du centre de masse multipli&eacute; par la masse totale de 
+    l’objet. Ainsi, on obtient&nbsp;:</p>
+  <p> <img
+src="./Physique.files/image022.gif" v:shapes="_x0000_i1078"> (Eq. 4)</p>
+  <p>L’&eacute;quation 4 dit que le moment lin&eacute;aire total est &eacute;gal 
+    &agrave; la masse totale multipli&eacute;e par la vitesse du centre de masse. 
+    Cela veut dire qu’il n’y a plus besoin d’effectuer la somme de l’&eacute;quation 
+    1 pour trouver le moment tant qu’on conna&icirc;t la masse totale de l’objet 
+    ainsi que l’emplacement et la vitesse du centre de masse. </p>
+  <p>En pratique, cela signifie que pour un corps homog&egrave;ne, son centre 
+    de masse est situ&eacute; en son centre, par exemple au centre d’une sph&egrave;re 
+    &agrave; r&eacute;partition sph&eacute;rique de masse ou &agrave; l’intersection 
+    des diagonales d’un cube. On peut donc assimiler tous les corps simples &agrave; 
+    des points. Ainsi, on peut dire que toutes les forces qui agissent sur lui 
+    agissent sur son centre de gravit&eacute;. De m&ecirc;me, on ne prendra en 
+    compte pour le calcul de sa vitesse que l’acc&eacute;l&eacute;ration du centre 
+    de gravit&eacute;.</p>
+  <p>L&agrave; o&ugrave; cela devient plus subtil, c’est lorsqu’on veut simuler 
+    la rotation du corps sur lui-m&ecirc;me. A ce moment, il faut tenir compte 
+    de l’endroit o&ugrave; est appliqu&eacute;e la force et ne pas se contenter 
+    de la placer au centre de gravit&eacute;. Ceci sera l’objet de la prochaine 
+    section.</p>
+</blockquote>
+<b><i><br clear=all style='page-break-before:always'>
+</i></b> 
+<p class="grand_parag">3. Application &agrave; la 3D</p>
+<blockquote>
+  <p>Toutes les formules que nous venons de voir restent les m&ecirc;mes en 3D, 
+    &agrave; la seule diff&eacute;rence pr&egrave;s qu’on travaille d&eacute;sormais 
+    avec des vecteurs &agrave; trois dimensions (x, y et z). La d&eacute;rivation 
+    s’effectue de mani&egrave;re semblable (on d&eacute;rive les trois coordonn&eacute;es 
+    par rapport &agrave; t) de m&ecirc;me que l’utilisation des primitive&nbsp;: 
+    les constantes qu’on ajoute deviennent simplement des vecteurs, et on ajoute 
+    &agrave; chaque fois les trois coordonn&eacute;es.</p>
+  <p><b><br clear=all style='page-break-before:always'>
+    </b> </p>
+</blockquote>
+<h1 class="super_title" align="center" >Mouvements angulaires</h1>
+<p >Les objets du monde r&eacute;el ne subissent rarement que des translations 
+  dans l’espace. Il leur arrive toujours de subir des rotations, comme pour une 
+  balle qui roule sur le sol par exemple, ou alors une balle de tennis ou de ping 
+  pong lanc&eacute;e par un sportif qui peut d&eacute;crire toutes sortes d’effets 
+  angulaires.</p>
+<div align="left"><span class="grand_parag">1. Angle, vitesse et acc&eacute;l&eacute;ration 
+  angulaire</span> </div>
+<blockquote> 
+  <p>Il existe une relation tr&egrave;s semblable entre ces trois param&egrave;tres 
+    &agrave; celle que nous avons vu pr&eacute;c&eacute;demment&nbsp;:</p>
+  <p> <img
+src="./Physique.files/image024.gif" v:shapes="_x0000_i1077"> </p>
+  <p>Om&eacute;ga majuscule est l’angle de l’objet (en radians), om&eacute;ga 
+    minuscule est sa vitesse angulaire (rad/s) et alpha est son acc&eacute;l&eacute;ration 
+    angulaire (rad/s<sup>2</sup>).</p>
+  <p>Le sch&eacute;ma suivant montre la signification de &#937;.</p>
+  <p><b>Fig. 1</b></p>
+  <p> <img width=306 height=306
+src="./Physique.files/image026.jpg" v:shapes="_x0000_i1076"> </p>
+  <p>L’angle &#937; s’obtient &agrave; partir de l’acc&eacute;l&eacute;ration 
+    angulaire de la m&ecirc;me fa&ccedil;on que la position du centre de masse 
+    &agrave; partir d’une acc&eacute;l&eacute;ration lin&eacute;aire.</p>
+  <p><b>Remarque</b>&nbsp;: il faut noter qu’en deux dimensions un vitesse ou 
+    une acc&eacute;l&eacute;ration angulaire sont des nombres. Ce sont des vecteurs 
+    quand on passe en trois dimensions. Le passage en 3D fera l’objet d’une autre 
+    rubrique.</p>
+  <p>&nbsp;</p>
+</blockquote>
+<p><span class="grand_parag">2. Vitesse d’un point de l’objet </span> </p>
+<blockquote>
+  <p>La question est maintenant de savoir comment d&eacute;terminer la vitesse 
+    d’un pont quelconque &agrave; la surface d’un objet en tenant compte non plus 
+    uniquement de la vitesse lin&eacute;aire du contre de masse, mais &eacute;galement 
+    de la vitesse angulaire de cet objet. Cela peut &ecirc;tre int&eacute;ressant 
+    pour r&eacute;agir &agrave; une collision, dont la force d&eacute;pend de 
+    la vitesse des deux points qui entrent en contact.</p>
+  <p><b>Fig. 2</b></p>
+  <p> <img width=306 height=296
+src="./Physique.files/image028.jpg" v:shapes="_x0000_i1071"> </p>
+  <p>La vitesse du point B est &eacute;gale &agrave; <img
+src="./Physique.files/image030.gif" v:shapes="_x0000_i1072" align="middle"> ou 
+    &#969; est la vitesse angulaire (rad/s) et rOB le rayon de l’objet – en m&egrave;tres 
+    (ici un cercle). Le r&eacute;sultat est la vitesse du point B en m/s.</p>
+  <p>On constate que le vecteur vitesse est tangent au cercle au point B. En fait 
+    le vecteur vitesse angulaire est le vecteur rayon «&nbsp;perpendicularis&eacute;&nbsp;» 
+    multipli&eacute; par la vitesse angulaire. Ainsi, on obtient&nbsp;:</p>
+  <p> <img
+src="./Physique.files/image032.gif" v:shapes="_x0000_i1073" align="middle"> . 
+    La norme de ce vecteur est &eacute;gale &agrave; <img
+src="./Physique.files/image033.gif" v:shapes="_x0000_i1074"> .</p>
+  <p>Ce que nous venons de calculer est la vitesse du point B dans le r&eacute;f&eacute;rentiel 
+    li&eacute; au rep&egrave;re local de l’objet (O, xb, yb), tel qu’il est montr&eacute; 
+    dans la figure 1. Il s’agit maintenant de d&eacute;terminer sa vitesse dans 
+    le r&eacute;f&eacute;rentiel global (O, xw, yw).</p>
+  <p>Il suffit pour ce faire d’ajouter la vitesse du centre d’inertie de l’objet. 
+    Ainsi, notre formule devient&nbsp;:</p>
+  <p> <img
+src="./Physique.files/image035.gif" v:shapes="_x0000_i1075"> </p>
+  <p>On peut &eacute;claircir tout cela en prenant un exemple simple. Admettons 
+    que le r&eacute;f&eacute;rentiel global (O, xw, yw) est une feuille et que 
+    l’objet est une gomme. Il est ais&eacute; de comprendre que la vitesse de 
+    la gomme dans le r&eacute;f&eacute;rentiel li&eacute; &agrave; son rep&egrave;re 
+    local d&eacute;pend uniquement de sa vitesse angulaire, tandis que si on consid&egrave;re 
+    son mouvement par rapport &agrave; la feuille, il faut aussi prendre en compte 
+    la vitesse de son centre de masse. Si on veut maintenant &eacute;tudier le 
+    tout par rapport au r&eacute;f&eacute;rentiel terrestre, il faut tenir compte 
+    en plus de la vitesse de la feuille (on suppose dans l’exemple que la gomme 
+    est pos&eacute;e sur la feuille et qu’elle tourne en restant en contact avec 
+    cette feuille).</p>
+  <p>Comment d&eacute;terminer les vitesses angulaires &agrave; partir des forces 
+    exerc&eacute;es sur l’objet, tel est l’objet du prochain paragraphe.</p>
+</blockquote>
+<p class="super_title" align="center"> Moment angulaire</p>
+<p Indent2 >Maintenant on peut travailler sur l’&eacute;quivalent angulaire de 
+  l’&eacute;quation qui lie la force, la masse et l’acc&eacute;l&eacute;ration 
+  lin&eacute;aire.</p>
+<p >On commence par d&eacute;finir le moment angulaire, LAB d’un point B autour 
+  d’un point A, comme ceci&nbsp;:</p>
+<p > <img
+src="./Physique.files/image037.gif" v:shapes="_x0000_i1069"> </p>
+<p >Une particularit&eacute; du moment angulaire est qu’il est mesur&eacute; &agrave; 
+  partir d’un autre point, contrairement au moment angulaire.</p>
+<p >Comme le montre cette &eacute;quation, le moment angulaire est la norme du 
+  produit vectoriel de la distance AB par le moment lin&eacute;aire du point B 
+  (masse * vitesse).</p>
+<p >En voici la repr&eacute;sentation sch&eacute;matique&nbsp;:</p>
+<p > <img width=305 height=276
+src="./Physique.files/image039.jpg" v:shapes="_x0000_i1068"> </p>
+<p >On constate une autre notation d’apr&egrave;s ce sch&eacute;ma&nbsp;: le moment 
+  angulaire est d&eacute;fini comme &eacute;tant le produit scalaire du vecteur 
+  <img
+src="./Physique.files/image041.gif" v:shapes="_x0000_i1070"> par le vecteur moment 
+  lin&eacute;aire. Cela revient &agrave; dire que&nbsp;:</p>
+<p > <img
+src="./Physique.files/image043.gif" v:shapes="_x0000_i1067"> </p>
+<p >La d&eacute;riv&eacute;e du moment angulaire par rapport au temps nous donne 
+  le moment de torsion, discut&eacute; dans la section suivante.</p>
+<p class="super_title" align="center">Moment de torsion</p>
+<p >De la m&ecirc;me mani&egrave;re qu’on a utilis&eacute; la d&eacute;riv&eacute;e 
+  du moment lin&eacute;aire pour d&eacute;finir la force, on va utiliser la d&eacute;riv&eacute;e 
+  du moment angulaire pour introduire l’&eacute;quivalent angulaire d’une force, 
+  c’est-&agrave;-dire le moment de torsion, not&eacute; &#964;.</p>
+<p > <img
+src="./Physique.files/image045.gif" v:shapes="_x0000_i1066"> </p>
+<p >Ainsi, plus la force appliqu&eacute;e en un point de la surface d’un objet 
+  est grande, plus le moment de torsion est grand. Il faut noter que pour le moment 
+  nous travaillons en deux dimensions et que dans une telle configuration, le 
+  produit vectoriel est un nombre donc le moment de torsion obtenu est lui-m&ecirc;me 
+  un nombre.</p>
+<p >Cependant, nous n’avons toujours pas de relation entre le moment de torsion 
+  et la vitesse angulaire. Nous ne pouvons donc toujours pas &eacute;tablir un 
+  lien entre ces deux propri&eacute;t&eacute;s qui nous permettrai de mettre en 
+  place un outil de simulation. Ce sera l’objet de la prochaine rubrique.</p>
+<p class="super_title" align="center"> Moment angulaire total et inertie</p>
+<p >Avant d’examiner la relation entre les quantit&eacute;s appartenant &agrave; 
+  la dynamique et celles appartenant &agrave; la cin&eacute;matique, on a besoin 
+  de d&eacute;finir le moment angulaire total, comme on l’a fait pour le moment 
+  lin&eacute;aire total.</p>
+<p >Le moment angulaire total autour d’un point A est d&eacute;fini comme suit&nbsp;:</p>
+<p > <img
+src="./Physique.files/image047.gif" v:shapes="_x0000_i1027"> </p>
+<p >Le moment angulaire total est donc la somme du moment angulaire de tous les 
+  points que constituent l’objet, le tout autour du point A, qui le plus souvent 
+  sont centre de masse.</p>
+<p >Mais cette formule est inutilisable pour un corps homog&egrave;ne qui n’est 
+  pas constitu&eacute; de quelques points seulement. Cette formule peut &ecirc;tre 
+  simplifi&eacute;e en introduisant une nouvelle quantit&eacute;, le moment d’inertie, 
+  de la m&ecirc;me mani&egrave;re qu’on a introduit le centre de masse pour simplifier 
+  les &eacute;quations du mouvement lin&eacute;aire.</p>
+<p >Partant de l’&eacute;quation pr&eacute;c&eacute;dente, on peut &eacute;crire 
+  que&nbsp;:</p>
+<p > <img
+src="./Physique.files/image049.gif" align=left hspace=12 v:shapes="_x0000_s1026"> 
+  Om&eacute;ga sort de la somme car la vitesse angulaire est constante pour tous 
+  les points.</p>
+<p >Le produit vectoriel d’un vecteur par lui m&ecirc;me mais «&nbsp;perpendicularis&eacute;&nbsp;» 
+  &eacute;quivaut &agrave; un produit scalaire normal (norme au carr&eacute;).</p>
+<p >Ainsi on obtient une nouvelle quantit&eacute;, le moment d’inertie autour 
+  du point A.</p>
+<p >Pour comprendre ce qu’est le moment d’inertie, il faut l’imaginer comme la 
+  quantit&eacute; d’effort qu’il faut fournir pour tourner un corps autour d’un 
+  point A. Plus le moment d’inertie de corps est grand, plus il faut une force 
+  importante pour le faire tourner sur lui-m&ecirc;me.</p>
+<p >Ainsi, on tourne beaucoup plus vite sur soi-m&ecirc;me lorsqu’on a les bras 
+  resserr&eacute;s que lorsqu’ils sont &eacute;cart&eacute;s, si on applique la 
+  m&ecirc;me force. Cela est logique puisque le moment d’inertie augmente avec 
+  le rayon.</p>
+<p >Vous n’avez qu’&agrave; observer des patineurs pour vous en convaincre.</p>
+<p >Il ne nous reste maintenant plus qu’&agrave; d&eacute;terminer l’acc&eacute;l&eacute;ration 
+  angulaire. On sait que la d&eacute;riv&eacute;e du moment angulaire est le moment 
+  de torsion et que la d&eacute;riv&eacute;e de la vitesse angulaire est l’acc&eacute;l&eacute;ration 
+  angulaire, d’o&ugrave; la formule suivante&nbsp;:</p>
+<p > <img
+src="./Physique.files/image051.gif" v:shapes="_x0000_i1025"> </p>
+<p >Nous avons &agrave; pr&eacute;sent tout ce qu’il faut pour simuler les translations 
+  et les rotations des objets en fonction des forces qu’ils subissent.</p>
+<p >Voici &agrave; titre indicatif le moment d’inertie de quelques objets usuels&nbsp;:</p>
+<p > <img
+src="./Physique.files/image052.gif" v:shapes="_x0000_i1026"> </p>
+<p class="super_title" align="center">Passage &agrave; la 3D</p>
+<p style='text-align:justify;'> </p>
+<p >Etant donn&eacute; qu’en trois dimensions le produit vectoriel n’est plus 
+  un nombre mais un vecteur, on obtient le r&eacute;sultat suivant&nbsp;:</p>
+<p > <img
+src="./Physique.files/image054.gif" align=left hspace=12 v:shapes="_x0000_s1027"> 
+</p>
+<p > <img
+src="./Physique.files/image056.gif" v:shapes="_x0000_i1038"> </p>
+<p >On constate de plus que la vitesse et l’acc&eacute;l&eacute;ration angulaire 
+  ne sont plus des nombres mais des vecteurs.</p>
+<p >La direction de ces vecteurs et l’axe de rotation et leur norme est la quantit&eacute; 
+  de mouvement &agrave; proprement parler, en rad/s ou en rad/s<sup>2</sup>.</p>
+<p >Se pose maintenant la question de savoir de quel angle il faut tourner l’objet 
+  autour de ses axes x, y et z pour repr&eacute;senter le mouvement angulaire 
+  dans le cadre du moteur 3D, c’est-&agrave;-dire comment obtenir &agrave; partir 
+  de la direction et de la norme du vecteur vitesse les bons angles de rotation.</p>
+<p >Voici donc la formule n&eacute;cessaire&nbsp;:</p>
+<p >Consid&eacute;rons une rotation r d’axe <img
+src="./Physique.files/image058.gif" v:shapes="_x0000_i1043" align="middle"> d’angle 
+  &#952; qui transforme un point M en M’.</p>
+<p >Le vecteur om&eacute;ga doit unitaire tel que <img
+src="./Physique.files/image060.gif" v:shapes="_x0000_i1046" align="middle"> .</p>
+<p >La transformation est la suivante&nbsp;:</p>
+<p > <img
+src="./Physique.files/image062.gif" v:shapes="_x0000_i1049"> </p>
+<p >On en d&eacute;duit les composantes x’, y’ et z’ suivantes, le tout en factorisant 
+  par x, y et z&nbsp;:</p>
+<p > <img
+src="./Physique.files/image064.gif" v:shapes="_x0000_i1065"> </p>
+<p >Cette factorisation nous permet de d&eacute;duire la matrice de transformation 
+  suivante&nbsp;:</p>
+<p > <img
+src="./Physique.files/image066.gif" v:shapes="_x0000_i1063"> </p>
+<p >On peut facilement constater que si le vecteur vitesse angulaire est nul, 
+  toute la matrice est remplie de z&eacute;ros sauf la diagonale, qui est remplie 
+  de 1 &agrave; cause du cos &#952; et on obtient ainsi la matrice identit&eacute;&nbsp;: 
+  s’il n’y a pas de rotation, on obtient le point initial &agrave; l’issu de la 
+  transformation.</p>
+<p >Pour ajouter les angles de rotation d’image en image de telle fa&ccedil;on 
+  &agrave; ce qu’on aie l’impression que l’objet tourne continuellement, il suffit 
+  de multiplier la matrice de rotation de l’image pr&eacute;c&eacute;dente par 
+  celle qu’on a d&eacute;termin&eacute; lors du calcul de l’image en cours.</p>
+</body>
+</html>

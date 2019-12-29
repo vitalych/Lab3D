@@ -1,0 +1,51 @@
+<html>
+<head>
+
+<title>Matrices et transformations g&eacute;om&eacute;triques</title>
+
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+<body lang=RU class="Normal" bgcolor="#FFFFFF">
+<p class="super_title" align="center">Matrices et 
+  transformations g&eacute;om&eacute;triques</p>
+<p style='text-align:justify'>Peut-&ecirc;tre savez-vous que pour 
+  faire tourner un point (x,y) autour de l’origine, dans un plan, la formule &agrave; 
+  utiliser est&nbsp;:</p>
+<p style='text-align:justify'> <img
+src="3_mat_trans_geom.doc.files/image002.gif" v:shapes="_x0000_i1025" width="168" height="48"> 
+</p>
+<p style='text-align:justify'>Mais si vous regardez cette formule 
+  avec ce que l’on vient de voir dans le chapitre sur les matrices, vous vous 
+  rendrez compte qu’il s’agit de la multiplication matricielle suivante :</p>
+<p style='text-align:justify'> <img
+src="./3_mat_trans_geom.doc.files/image004.gif" v:shapes="_x0000_i1026"> </p>
+<p style='text-align:justify'>Ainsi donc, une rotation peut se repr&eacute;senter 
+  par une multiplication matricielle, pour autant que les points soient eux-m&ecirc;mes 
+  repr&eacute;sent&eacute;s par des matrices colonnes.</p>
+<p style='text-align:justify'>A pr&eacute;sent, si vous voulez faire 
+  deux rotations successives, vous allez devoir utiliser deux fois cette formule. 
+  Et si vous voulez faire deux rotations &agrave; 2000 points, vous allez devoir, 
+  finalement, effectuer 4000 op&eacute;rations matricielles.</p>
+<p style='text-align:justify'>Et bien non (et c’est l&agrave; qu’on 
+  va comprendre &agrave; quoi vont nous servir les matrices), car la multiplication 
+  de deux matrices de transformation (comme la matrice de multiplication vue plus 
+  haut) est une nouvelle matrice de transformation, qui correspond &agrave; la 
+  composition des deux transformations. Si vous ne comprenez toujours pas, &ccedil;a 
+  se r&eacute;sume par&nbsp;:</p>
+<p style='text-align:justify'>Si A est une matrice de rotation d’un 
+  angle a, et B est une matrice de rotation d’un angle b, alors A*B est une matrice 
+  de rotation d’angle a+b.</p>
+<p style='text-align:justify'>Bref, pour vos 2000 points, vous faites 
+  d’abord le calcul du produit matriciel et ensuite vous faites uniquement 2000 
+  op&eacute;rations matricielles sur vos points. En pratique ici, c’est totalement 
+  inutile car tout le monde sait bien qu’il aurait suffit de cr&eacute;er une 
+  autre matrice de rotation dont l’angle est la somme des deux angles, mais &ccedil;a 
+  n’est pas toujours aussi simple que &ccedil;a…</p>
+<p style='text-align:justify'>Figurez-vous qu’il existe des matrices 
+  de translation, de rotation, d’homoth&eacute;tie, de projection, etc, etc… Si 
+  vous devez faire une suite d’op&eacute;rations de ce genre &agrave; un certain 
+  nombre de points, vous commencez par calculer la matrice de transformation qui 
+  est la composition des op&eacute;rations &eacute;l&eacute;mentaires et vous 
+  appliquez cette matrice &agrave; vos points. Le gain est &eacute;norme.</p>
+</body>
+</html>

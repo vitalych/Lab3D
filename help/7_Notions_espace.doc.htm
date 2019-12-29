@@ -1,0 +1,97 @@
+<html>
+<head>
+
+<title>Notion d’espace</title>
+
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="normal">
+<p class="super_title" align="center">Notion d’espace</p>
+<p style='text-align:justify'>Un espace, ça n’est jamais qu’une base, en gros 
+  c’est équivalant. Quand on parle d’un point, on doit préciser sa base, et donc 
+  finalement dans quel espace il se situe. Votre hauteur, celle finalement de 
+  la chaise, se trouve dans l’espace «&nbsp;pièce&nbsp;»,  tandis que la hauteur 
+  du plancher se trouve dans l’espace «&nbsp;maison&nbsp;», et ainsi de suite.</p>
+<p style='text-align:justify'><span lang=FR>Dans un moteur 3D, on peut dire qu’il 
+  y a 4 espaces, ou plutôt 4 types d’espace.</span></p>
+<p style='text-align:justify'>&nbsp;</p>
+<p style='text-align:justify'><b><span lang=FR><span class="grand_parag">1. L’espace 
+  «&nbsp;objet&nbsp;»</span></span></b></p>
+<p style='text-align:justify'><span lang=FR>Depuis le chapitre précédent, vous 
+  pouvez imaginer que chaque objet (3D ou pas) est défini dans sa base propre. 
+  Un rectangle (cube, …) est défini par une paire (a,b), un cercle par un rayon, 
+  etc… On suppose donc que le rectangle est centré dans sa base, de même que le 
+  cercle. On peut même tout normaliser, en disant qu’un cercle est finalemement 
+  toujours de rayon 1. Il s’agit en fait de l’objet abstrait, qu’il faudra «&nbsp;placer&nbsp;» 
+  dans un espace commun, là où se trouvent rassemblés tous les objets, la scène 
+  où se déroule l’action.</span></p>
+<p style='text-align:justify'>&nbsp;</p>
+<p style='text-align:justify'><b><span lang=FR><span class="grand_parag">2. L’espace 
+  «&nbsp;global&nbsp;»</span></span></b></p>
+<p style='text-align:justify'><span lang=FR>Il faudra donc, pour chaque objet, 
+  connaître une matrice (une base, un repère, etc…) qui permette de passer de 
+  la base de l’objet («&nbsp;l’espace objet&nbsp;») à la base globale («&nbsp;l’espace 
+  global&nbsp;»). Mais cela suffit-il&nbsp;? Pour décrire la position de chaque 
+  objet dans l’espace, certainement, mais pas pour les afficher à l’écran. Il 
+  faut connaître un renseignement en plus.</span></p>
+<p style='text-align:justify'>&nbsp;</p>
+<p style='text-align:justify'><b><span lang=FR><span class="grand_parag">3. L’espace 
+  «&nbsp;caméra&nbsp;»</span></span></b></p>
+<p style='text-align:justify'><span lang=FR>Car où se trouve la caméra&nbsp;? 
+  En général dans les moteurs simples, la caméra se trouve à l’origine et regarde 
+  dans la direction des Z, alors que l’axe des X est horizontal et l’axe Y vertical. 
+  Evidement, ça n’est pas très souple…</span></p>
+<p style='text-align:justify'>&nbsp;</p>
+<p style='text-align:justify'><b><span lang=FR><span class="grand_parag">4. L’espace 
+  «&nbsp;écran&nbsp;»</span></span></b></p>
+<p style='text-align:justify'><span lang=FR>Le problème, c’est que les formules 
+  qui permettent de projeter un point à l’écran sont des formules qui supposent 
+  que la caméra se trouve à l’origine, regarde l’axe des Z etc…</span></p>
+<p style='text-align:justify'><span lang=FR>Alors que faire&nbsp;? Le plus simplement 
+  du monde, il faut déplacer tous les objets de sorte que ceux qui sont devant 
+  la caméra et dans l’axe de regard de cette caméra se retrouvent placés sur l’axe 
+  des Z, et ainsi de suite. Les objets sont alors «&nbsp;alignés&nbsp;». Finalement, 
+  il faut faire un nouveau changement de base, pour se déplacer dans «&nbsp;l’espace 
+  caméra&nbsp;». Quelle est la matrice qui correspond à ce changement de base&nbsp;? 
+  Tout simplement la matrice qui explique comment la caméra est située par rapport 
+  à sa position «&nbsp;de base&nbsp;», et donc quelle est la position relative 
+  de la caméra par rapport à l’origine de l’espace global, quelle est son orientation, 
+  etc… Vous voulez faire tourner la caméra&nbsp;? Multipliez sa matrice par une 
+  matrice de rotation…</span></p>
+<p style='text-align:justify'><span lang=FR>Le dernier espace est finalement l’écran 
+  lui-même, espace en deux dimensions, c’est l’étape ultime, ce que le joueur 
+  ou l’utilisateur verra. C’est également une base, et il existe une formule pour 
+  projeter les coordonnées alignées sur cette base&nbsp;:</span></p>
+<p style='text-align:justify'><span>            </span><sub> <img width=129 height=51
+src="./7_Notions_espace.doc.files/image002.gif" v:shapes="_x0000_i1025"> </sub> 
+   ou <sub> <img width=60 height=41
+src="./7_Notions_espace.doc.files/image004.gif" v:shapes="_x0000_i1026"> </sub> 
+</p>
+<p style='text-align:justify'><span lang=FR> <img width=382 height=157
+src="./7_Notions_espace.doc.files/image006.jpg" v:shapes="_x0000_i1027"> </span></p>
+<p style='text-align:justify'><span lang=FR>La lumière se propageant en ligne 
+  droite, le problème se ramène à l’utilisation du théorème de Thalès.</span></p>
+<p style='text-align:justify'><span lang=FR>a est la distance oeil-écran (qu’on 
+  fixe par ailleurs arbitrairement, en général entre 500 et 1000), z la distance 
+  écran-objet, y la hauteur de l’objet et y’ la trace de cet objet sur l’écran.</span></p>
+<p style='text-align:justify'>&nbsp;</p>
+<p style='text-align:justify'><b><span lang=FR><span class="grand_parag">5. Récapitulation</span></span></b></p>
+<p style='text-align:justify'><span lang=FR>Finalement, si on a un point d’un 
+  objet, dans l’espace objet, disons son coin supérieur gauche, et qu’on veut 
+  connaître sa position à l’écran, on doit faire les opérations suivantes&nbsp;:</span></p>
+<ol start=1 type=1>
+  <li style='text-align:justify;     '><span lang=FR>Transformer ce point avec 
+    la matrice de base de l’objet, pour connaître sa position dans l’espace «&nbsp;global&nbsp;»</span></li>
+  <li style='text-align:justify;     '><span lang=FR>transformer cette position 
+    globale avec la matrice de base de la caméra, de manière à connaître sa position 
+    dans l’espace «&nbsp;caméra&nbsp;»</span></li>
+  <li style='text-align:justify;     '><span lang=FR>transformer cette position 
+    caméra avec la matrice de projection, de manière à connaître sa position dans 
+    l’espace «&nbsp;écran&nbsp;»</span></li>
+</ol>
+<p style='text-align:justify'><span lang=FR>On peut évidement regrouper toutes 
+  ces transformations dans une seule matrice et appliquer la matrice finale à 
+  chacun des points, ce qui revient à faire trois fois moins d’opérations. Gain 
+  de vitesse assuré.</span></p>
+</body>
+</html>

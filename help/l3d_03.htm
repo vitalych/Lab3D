@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Inspecteur d'objets</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p class="super_title" align="center">L'inspecteur d'objets</p>
+<p>&nbsp;</p>
+<p><img src="pics/l3dobjinsp.png" width="220" height="476" align="right" vspace="0" hspace="0"><span class="normal"><b>Cette 
+  fen&ecirc;tre vous permet de modifier toutes les propri&eacute;t&eacute;s de 
+  l'objet s&eacute;lectionn&eacute;</b></span><b></b></p>
+<ol>
+  <li class="normal">Liste de tous les objets disponibles dans la surface de travail. 
+    Cette liste vous permet d'en s&eacute;lectionner un afin de modifier ses propri&eacute;t&eacute;s.</li>
+  <li><span class="normal">Propri&eacute;t&eacute;s de l'objet s&eacute;lectionn&eacute;. 
+    </span> 
+    <ul>
+      <li class="normal"><b>Nom</b>: identifiant de l'objet. Permet de nommer 
+        un objet. Deux objets ne peuvent pas avoir le m&ecirc;me nom.</li>
+      <li class="normal"><b>Echelle_X/Y/Z:</b> vous permet de sp&eacute;cifier 
+        un facteur d'&eacute;tirement de l'objet pour ajuster sa taille &agrave; 
+        vos besoins. Evitez d'utiliser des facteurs trop grand (&gt;100) ou trop 
+        petits (&lt;1).</li>
+      <li class="normal"><b>Position_X/Y/Z</b>: sp&eacute;cifie les coordonn&eacute;es 
+        du centre de gravit&eacute; de l'objet dans l'espace.</li>
+      <li class="normal"><b>Angle_A/B/G</b>: permet de d&eacute;finir un angle 
+        de rotation autour des axes x, y et z relatifs au rep&egrave;re du r&eacute;f&eacute;rentiel 
+        objet.</li>
+      <li class="normal"><b>Frottements</b>: fonctionne uniquement pour une surface.</li>
+      <li class="normal"><b>Masse</b>: masse de l'objet. Permet de calculer son 
+        moment d'inertie en conjonction avec l'&eacute;chelle</li>
+    </ul>
+  </li>
+  <li class="normal">Ce bouton permet de supprimer l'objet s&eacute;lectionn&eacute;</li>
+  <li class="normal">D&eacute;finir les conditions initiales. Ce bouton permet 
+    de fixer les propri&eacute;t&eacute;s en cours de tous les objets comme &eacute;tant 
+    les param&egrave;tres de d&eacute;part d'une nouvelle simulation: position 
+    initiale, angle, etc...</li>
+  <li class="normal">Permet de revenir &agrave; l'issue d'une simulation aux conditions 
+    initiales. Cette fonction peut &ecirc;tre utile pour tester diff&eacute;rents 
+    param&egrave;tres sur l'influence du mouvement des objets. Voici un exemple: 
+  </li>
+</ol>
+<p class="normal">Supposons que vous vouliez voir l'influence du rayon d'un objet 
+  sur sa vitesse de rotation. Voici dans l'ordre les op&eacute;rations &agrave; 
+  effectuer:</p>
+<ol>
+  <li class="normal">D&eacute;finissez votre environnement initial en positionnant 
+    les surfaces et les sph&egrave;res: mettez des surfaces inclin&eacute;es et 
+    positionnez les sph&egrave;res au dessus.</li>
+  <li class="normal">Cliquez sur le bouton &quot;D&eacute;finir les conditions 
+    initiales&quot;</li>
+  <li class="normal">Lancez la simulation</li>
+  <li class="normal">Observez la vitesse angulaire de la sph&egrave;re lorsqu'elle 
+    aura tomb&eacute; sur la surface et qu'elle commence &agrave; rouler.</li>
+  <li class="normal">Arr&ecirc;tez la simulation</li>
+  <li class="normal">R&eacute;tablissez les conditions initiales avec le bouton 
+    5.</li>
+  <li class="normal">Modifiez la taille de la sph&egrave;re en fixant Echelle_X 
+    = Echelle_Y=Echelle_Z=3 par exemple.</li>
+  <li class="normal">Red&eacute;finissez les conditions initiales</li>
+  <li class="normal">Relancez la simulation</li>
+  <li class="normal">Vous pouvez observer normalement une diminution de la vitesse 
+    angulaire de la sph&egrave;re &agrave; cause de son moment d'inertie qui a 
+    augment&eacute;.</li>
+</ol>
+<ol>
+  <ol>
+  </ol>
+</ol>
+</body>
+</html>

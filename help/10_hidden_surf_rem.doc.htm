@@ -1,0 +1,61 @@
+<html>
+<head>
+
+<title>Suppression des faces cachées</title>
+
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+<body class="Normal" bgcolor="#FFFFFF">
+<p class="super_title" align="center">Suppression des faces cachées</p>
+<p style='text-align:justify'><span lang=FR-CH>Une face de n’importe quel objet 
+  est un plan. Voici quelques informations de base pour comprendre le processus.</span></p>
+<h2 style='text-align:justify'><span lang=FR-CH><span class="grand_parag">1. Les 
+  plans</span></span></h2>
+<p style='text-align:justify'><span lang=FR-CH>Un plan dans l’espace est défini 
+  par 3 points. Un plan est par définition infini. Il s’étend au-delà de ces trois 
+  points et n’est pas limité au seul triangle XYZ (si on prend les points X Y 
+  et Z pour définir ce plan). Toutefois, dans un objet 3D, chaque face est délimitée 
+  par un certain nombre de points qui le délimitent. Seule cette infime partie 
+  du plan est concernée par le remplissage avec une couleur ou une texture.</span></p>
+<h2 style='text-align:justify'><span lang=FR-CH><span class="grand_parag">2. Equation 
+  de plan</span></span></h2>
+<p style='text-align:justify'><span lang=FR-CH>Un plan de l’espace est défini 
+  par l’équation suivante&nbsp;:</span></p>
+<p style='text-align:justify'><span lang=FR-CH> <img
+src="10_hidden_surf_rem.doc.files/image002.gif" v:shapes="_x0000_i1025">  
+  </span></p>
+<p style='text-align:justify'><span lang=FR-CH>Tout point de coordonnées (x, y, 
+  z) qui vérifie cette égalité appartient au plan.</span></p>
+<p style='text-align:justify'><span lang=FR-CH>Pour savoir si une face est cachée, 
+  il suffit de calculer les coefficients A, B, C et D.</span></p>
+<h2 style='text-align:justify'><span lang=FR-CH><span class="grand_parag">3. Calcul 
+  des coefficients</span></span></h2>
+<p style='text-align:justify'><span lang=FR-CH>Soit 3 points X, Y et Z de coordonnées 
+  respectives (x1, y1, z1), (x2, y2, z2) et (x3, y3, z3).</span></p>
+<p style='text-align:justify'><span lang=FR-CH>Les coefficients A, B, C et D sont 
+  définis ainsi&nbsp;:</span></p>
+<p style='text-align:justify'><span lang=FR-CH> <img
+src="10_hidden_surf_rem.doc.files/image004.gif" v:shapes="_x0000_i1026">  
+  </span></p>
+<p style='text-align:justify'>Les plus attentifs auront reconnus en A, B et C 
+  les composantes du produit vectoriel  <img
+src="10_hidden_surf_rem.doc.files/image006.gif" v:shapes="_x0000_i1027" align="texttop"> 
+    (le tout est bien entendu factorisé, d’où la difficulté à le reconnaître).</p>
+<p style='text-align:justify'>D est obtenu en remplaçant les coordonnées x, y 
+  et z de l’équation  <img
+src="10_hidden_surf_rem.doc.files/image007.gif" v:shapes="_x0000_i1028" align="texttop"> 
+    par exemple par x1, y1 et z1 et en faisant de sorte que  <img
+src="10_hidden_surf_rem.doc.files/image009.gif" v:shapes="_x0000_i1029" align="texttop"> 
+    ou  <img
+src="10_hidden_surf_rem.doc.files/image011.gif" v:shapes="_x0000_i1030" align="texttop"> 
+   . On factorise le tout par x1, x2 et x3 et on obtient la jolie formule 
+  ci- dessus.</p>
+<h2 style='text-align:justify'><span lang=FR-CH><span class="grand_parag">4. La 
+  face est-elle cachée&nbsp;?</span></span></h2>
+<p style='text-align:justify'><span lang=FR-CH>Si D&gt;0, la face est visible 
+  et on la dessine, sinon elle est cachée et on passe à la suivante. Les autres 
+  coordonnées interviendront lors de son remplissage.</span></p>
+<p style='text-align:justify'><span lang=FR-CH>Dans la rubrique suivante, vous 
+  découvrirez comment une face est remplie.</span></p>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="FrameName" value="about">
+	<param name="Window Styles" value="0x800027">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Avant de commencer...">
+		<param name="Local" value="about.htm">
+		<param name="FrameName" value="about">
+		<param name="ImageNumber" value="18">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Introduction">
+		<param name="Local" value="3dlab_fonc.htm">
+		<param name="ImageNumber" value="17">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Les math&eacute;matiques de la 3D">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Introduction">
+			<param name="Local" value="1_maths_intro.doc.htm">
+			<param name="ImageNumber" value="17">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Les matrices">
+			<param name="Local" value="2_Matrices.doc.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Matrices et transformations g&eacute;om&eacute;triques">
+			<param name="Local" value="3_mat_trans_geom.doc.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Le produit vectoriel">
+			<param name="Local" value="4b_produit_vectoriel.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Les coordonn&eacute;es homog&egrave;nes">
+			<param name="Local" value="5_norm_coord.doc.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Les matrices de transformation 3D">
+			<param name="Local" value="4_transf_mat_3d.doc.htm">
+			<param name="URL" value="matrix.jar">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Les bases du moteur 3D">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Notion de base">
+			<param name="Local" value="6_notions_base.doc.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Notion d'espace">
+			<param name="Local" value="7_Notions_espace.doc.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Les objets">
+			<param name="Local" value="8_objets.doc.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Un premier pipeline">
+			<param name="Local" value="9_Un premier pipeline.doc.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Suppression des faces cach&eacute;es">
+			<param name="Local" value="10_hidden_surf_rem.doc.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Remplissage des polygones">
+			<param name="Local" value="11_poly_fill.doc.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Consid&eacute;rations physiques">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Introduction">
+			<param name="Local" value="phys_intro.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Position, vitesse, acc&eacute;l&eacute;ration">
+			<param name="Local" value="phys_01.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Mouvements angulaires">
+			<param name="Local" value="phys_02.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Moments">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Moment angulaire">
+				<param name="Local" value="phys_03.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Moment de torsion">
+				<param name="Local" value="phys_04.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Moment angulaire total et inertie">
+				<param name="Local" value="phys_05.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Passage &agrave; la 3D">
+			<param name="Local" value="phys_06.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Gestion des collisions">
+			<param name="Local" value="phys_07.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Mod&eacute;liser un personnage virtuel">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Introduction">
+			<param name="Local" value="model_intro.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="La technique des polygones">
+			<param name="Local" value="tpe_celine.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="La technique des courbes">
+			<param name="Local" value="nurbs.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Cr&eacute;ation de personnages humains">
+			<param name="Local" value="model_reel.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Manuel d'utilisation">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="La fen&ecirc;tre principale">
+			<param name="Local" value="l3d_01.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="La barre de menus">
+			<param name="Local" value="l3d_02.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Inspecteur d'objets">
+			<param name="Local" value="l3d_03.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Applicateur de forces">
+			<param name="Local" value="l3d_04.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Conclusion">
+		<param name="Local" value="conclusion.htm">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sources utilis&eacute;es">
+		<param name="Local" value="sources.htm">
+		<param name="ImageNumber" value="14">
+		</OBJECT>
+</UL>
+</BODY></HTML>

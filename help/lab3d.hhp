@@ -1,0 +1,13 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=lab3d.chm
+Contents file=lab3d_cnt.hhc
+Default topic=about.htm
+Display compile progress=No
+Full-text search=Yes
+Language=0x40c Français (France)
+Title=Aide de Lab3D
+
+
+[INFOTYPES]
+

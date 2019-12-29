@@ -1,0 +1,71 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Un premier pipeline</title>
+
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+<body class="Normal" bgcolor="#FFFFFF">
+<p class="super_title" align="center">Un premier pipeline</p>
+<p style='text-align:justify'><span lang=FR>Un pipeline c’est la suite des opérations 
+  qui sont faites pour obtenir le résultat à l’écran. C’est un terme souvent utilisé.</span></p>
+<p style='text-align:justify'><span lang=FR>Voici, étape par étape, tout ce qu’il 
+  faut faire pour afficher un objet à l’écran.</span></p>
+<ol start=1 type=1>
+  <li><span
+     lang=FR>On définit la structure de l’objet. Pour cela...</span></li>
+  <ol start=1 type=a>
+    <li><span
+      lang=FR>Initialiser les coordonnées locales de chaque vectrice (ou sommet).</span></li>
+    <li><span
+      lang=FR>Définir les faces de l’objet en mettant en place une relation entre 
+      les vectrices.<br>
+      <br>
+      Exemple&nbsp;: un cube a 8 vectrices et 6 faces, chacune constituée de 4 
+      vectrices.</span></li>
+  </ol>
+</ol>
+<ol start=2 type=1>
+  <li><b><span
+     lang=FR>On définit une matrice identité globale </span></b></li>
+  <li><span
+     lang=FR>On applique une matrice d’homothétie à cette matrice globale (mise 
+    à l’échelle de l’objet)...</span></li>
+  <li><span
+     lang=FR>Puis on applique une matrice de rotation pour faire tourner tous 
+    les points de l’objet...</span></li>
+  <li><span
+     lang=FR>...avant d’utiliser une matrice de translation pour positionner l’objet 
+    dans l’espace global.</span></li>
+  <li><span
+     lang=FR>Pour finir, multiplier toutes les vectrices «&nbsp;locales&nbsp;» 
+    de l’objet pour obtenir leurs coordonnées «&nbsp;globales&nbsp;»<br>
+    <br>
+    <br>
+    </span></li>
+  <li><b><span
+     lang=FR>Maintenant, on réinitialise notre matrice avec une matrice identité</span></b></li>
+  <li><span
+     lang=FR>On lui applique une translation qui correspond à la position du spectateur 
+    dans l’espace</span></li>
+  <li><span
+     lang=FR>On applique à cette matrice une rotation pour prendre en compte l’angle 
+    d’observation du spectateur</span></li>
+  <li><span
+     lang=FR>On multiplie les coordonnées globales obtenues précédement par cette 
+    nouvelle matrice et on obtient les coordonnées alignées.<br>
+    <br>
+    </span></li>
+  <li><b><span
+     lang=FR>Pour finir, on projette le tout pour obtenir les coordonnées 2D sur 
+    l’écran.</span></b></li>
+</ol>
+<p class=MsoBodyTextIndent><span lang=FR>Maintenant, il s’agit de relier tous 
+  ces points si l’on veut une représentation en fil de fer, ou alors remplir les 
+  faces avec une couleur unie ou une texture. Dans ces deux derniers cas, il faut 
+  déterminer si la face à remplir est visible ou non. Remplir des faces invisibles 
+  donne des choses très vilaines à l’écran.</span></p>
+<p><span lang=FR>Comment savoir si une face est cachée ou pas, c’est l’objet de 
+  la prochaine section. </span></p>
+</body>
+</html>

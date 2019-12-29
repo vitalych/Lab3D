@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Conclusion</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="default.css" type="text/css">
+<SCRIPT Language="JScript">
+function parser(fn) {
+var X, Y, sl, a, ra, link;
+ra = /:/;
+a = location.href.search(ra);
+if (a == 2)
+X = 14;
+else
+X = 7;
+sl = "\\";
+Y = location.href.lastIndexOf(sl) + 1;
+link = 'file:///' + location.href.substring(X, Y) + fn;
+location.href = link;
+}
+</SCRIPT>
+
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<p class="super_title" align="center">Conclusion</p>
+<p>&nbsp;</p>
+<p class="normal">Vous venez de voir les bases les plus basiques du fonctionnement 
+  des jeux actuels (dignes de ce nom...) et des moteurs de rendu des logiciels 
+  de synth&egrave;se d'image. Beaucoup de points n'ont pas encore &eacute;t&eacute; 
+  &eacute;voqu&eacute;s pour nous permettre de passer &agrave; un degr&eacute; 
+  de r&eacute;alisme sup&eacute;rieur et commencer &agrave; concevoir un jeu 3D. 
+  Parmi ces points on trouve: les collisions simultan&eacute;es entre des objets 
+  de formes les plus diverses, d&eacute;formation des objets, gestion des lumi&egrave;res, 
+  lissage de courbes, etc...</p>
+<p class="normal">Toutefois nous pouvons d&egrave;s maintenant r&eacute;aliser 
+  des objets complexes aux polygones multiples en leur plaquant des textures (moyennant 
+  une l&eacute;g&egrave;re extension au logiciel) et voir leur &eacute;volution 
+  dans l'espace au gr&eacute; des forces qu'ils subissent : le jeu de billard 
+  n'est plus tr&egrave;s loin... Nous savons aussi comment s'y prendre pour mod&eacute;liser 
+  un personnage 3D avec les logiciels appropri&eacute;s. En enregistrant le personnage 
+  dans un fichier contenant les coordonn&eacute;es de chacun de ses sommets, on 
+  pourrait l'ouvrir dans Lab3D (toujours avec un patch pas trop gros) et lui faire 
+  faire toutes sortes de mouvements simples. Et pour aboutir &agrave; un logiciel 
+  de synth&egrave;se d'images 3D anim&eacute;es et de films simples, on pourrait 
+  lui adjoindre la capacit&eacute; de sauvegarder les fichiers au format vid&eacute;o 
+  (AVI, DivX), simplement en enregistrant les images successives et en les compressant.</p>
+<p class="normal">Avec la somme des connaissances rassembl&eacute;es dans cette 
+  documentation et le code source complet du moteur actuel, vous aurez de quoi 
+  impl&eacute;menter facilement tout ce qui vient d'&ecirc;tre &eacute;voqu&eacute;, 
+  ce qui pourrait &ecirc;tre le but d'un prochain TPE (ou d'un TIPE ? ;-).</p>
+<hr>
+<div align="center">
+  <p align="center" ><font face="Arial, Helvetica, sans-serif" size="2"><i><a onClick="parser('demo99.wmv')">Voici 
+    une petite d&eacute;mo de tout ce que peut faire un logiciel de rendu 3D (et 
+    peut-&ecirc;tre m&ecirc;me plus...)</A></i></font></p>
+  <p><a onclick="parser('demo99.wmv')" style="text-decoration: underline;
+color: green; cursor: hand">Voir la vidéo</a> (nécessite Windows Media Player). 
+  </p>
+  <p><img src="pics/3ds_ombres.png" width="323" height="242"> <br>
+    Les ombres : des heures de calculs pour g&eacute;n&eacute;rer cette image 
+    virtuelle photo-r&eacute;aliste.</p>
+  <p>&nbsp; </p>
+</div>
+</body>
+</html>

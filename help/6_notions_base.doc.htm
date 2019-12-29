@@ -1,0 +1,93 @@
+<html>
+<head>
+
+<title>Notion de base</title>
+
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+<body class="Normal" bgcolor="#FFFFFF">
+<p class="super_title" align="center">Notion de base</p>
+<p style='text-align:justify'><span lang=FR>Pas à prendre dans le sens «&nbsp;notions 
+  basiques&nbsp;» mais bien dans le sens «&nbsp;qu’est-ce qu’une base&nbsp;?&nbsp;»</span></p>
+<p style='text-align:justify'><span lang=FR>Commençons comme toujours en 2D avec 
+  un petit problème assez simple. Nous définissons un rectangle comme ceci&nbsp;:</span></p>
+<p style='text-align:justify'> <img width=268 height=156
+src="./6_notions_base.doc.files/image001.gif" v:shapes="_x0000_s1026 _x0000_s1027 _x0000_s1028 _x0000_s1029 _x0000_s1030 _x0000_s1031 _x0000_s1032 _x0000_s1033" align=top> 
+  <span
+lang=FR></span></p>
+<p style='text-align:justify'><span lang=FR>Si je vous demande à quel endroit 
+  se trouve le coin supérieur gauche, vous pouvez tout de suite me répondre, il 
+  se trouve en (-a,-b). Maintenant plaçons ce rectangle comme ceci&nbsp;:</span></p>
+<p style='text-align:justify'> <img width=412 height=184
+src="./6_notions_base.doc.files/image002.gif" v:shapes="_x0000_s1034 _x0000_s1035 _x0000_s1036 _x0000_s1037"> 
+  <span
+lang=FR></span></p>
+<p style='text-align:justify'><span lang=FR>Même si je vous donnais la position 
+  du nouveau centre et de l’angle de rotation, vous ne pouvez pas immédiatement 
+  me donner la position du coin supérieur gauche du rectangle. Il faut faire un 
+  calcul.</span></p>
+<p style='text-align:justify'><span lang=FR>En fait qu’allez-vous faire&nbsp;? 
+  Une méthode classique, c’est de prendre ce point (-a,-b), de lui appliquer la 
+  même rotation suivie de la même translation que celles appliquées au rectangle. 
+  Vous obtiendrez en effet la position du point.</span></p>
+<p style='text-align:justify'><span lang=FR>Mais il existe une autre manière de 
+  voir les choses (qui revient, bien sûr, au même), c’est de dire que la position 
+  du point (-a,-b) original se trouve au point… (-a,-b), après tout, c’est toujous 
+  le coin supérieur gauche et il n’y a pas de raison que le coin supérieur gauche 
+  se trouve ailleurs qu’en (-a,-b). Et vous aurez parfaitement raison, de la même 
+  manière que quand l’on vous demande à quelle hauteur vous vous trouvez, vous 
+  donnerez sûrement la hauteur de la chaise sur laquelle vous êtes assis(e), sans 
+  prendre en compte la hauteur du bâtiment, ni la hauteur de la colline sur laquelle 
+  se trouve ce bâtiment, etc…</span></p>
+<p style='text-align:justify'><span lang=FR>L’important, c’est de savoir qu’il 
+  s’agit de la hauteur par rapport au plancher. Si on est capable de donner la 
+  hauteur du plancher par rapport au sol, et la hauteur du sol par rapport au 
+  niveau de la mer, on saura bien donner votre hauteur par rapport au niveau de 
+  la mer. Et bien ici c’est la même chose, le point se trouve en (-a,-b) par rapport… 
+  au premier schéma, pas du tout par rapport au second. La seule question à se 
+  poser, c’est&nbsp;: «&nbsp;comment passer du premier schéma au second&nbsp;?&nbsp;».</span></p>
+<p style='text-align:justify'><span lang=FR>La réponse est évidente, il faut faire 
+  une translation, suivie d’une rotation, ça revient au même. En réalité, la bonne 
+  manière de représenter la seconde figure est celle-ci&nbsp;:</span></p>
+<p style='text-align:justify'> <img width=568 height=351
+src="./6_notions_base.doc.files/image003.gif" align=top v:shapes="_x0000_s1038 _x0000_s1039 _x0000_s1040 _x0000_s1041 _x0000_s1042 _x0000_s1043 _x0000_s1044 _x0000_s1045 _x0000_s1046 _x0000_s1047 _x0000_s1048 _x0000_s1049"> 
+  <span
+lang=FR></span></p>
+<p style='text-align:justify'><span lang=FR>Et donc, si on vous demande la position 
+  du coin supérieur gauche, vous répondrez deux choses&nbsp;: (-a,-b), et surtout 
+  comment passer du premier repère d’axe au second. Et comme pour passer de l’un 
+  à l’autre, il s’agit d’une combinaison d’opération, devinez ce qu’on va donner 
+  pour décrire le passage d’un repère (appelé base) à une autre&nbsp;? Une matrice, 
+  bien entendu…</span></p>
+<p style='text-align:justify'><span lang=FR>Finalement, une coordonée ne représente 
+  rien si elle n’est pas accompagnée d’un renseignement qui dit de quelle base 
+  on parle.</span></p>
+<p class=MsoBodyText><span lang=FR>A quoi ça sert me direz-vous&nbsp;? C’est de 
+  toutes façons évident, tout ça… </span></p>
+<p style='text-align:justify'><span lang=FR>Voyons si vous avez compris alors&nbsp;: 
+  moi je vous donne un point quelconque, (x,y), se trouvant dans la «&nbsp;grande&nbsp;» 
+  base, pas celle de travers qui est celle du rectangle. Ce que je vous demande, 
+  c’est de me dire si ce point (x,y) se trouve dans le rectangle ou pas. Facile&nbsp;?</span></p>
+<p style='text-align:justify'><span lang=FR>Ce problème n’est à prioris pas facile, 
+  il faut regarder les équations des droites des côtés du rectangle, etc, etc, 
+  etc, bonne chance…</span></p>
+<p style='text-align:justify'><span lang=FR>Alors qu’il suffirait de se demander&nbsp;: 
+  «&nbsp;quelles sont les coordonées de ce point dans la base du rectangle&nbsp;?&nbsp;» 
+  Si on connaît ça, le problème devient très simple, car cela revient à savoir 
+  si un point se trouve dans un rectangle qui est parallèle aux axes. Ce qui se 
+  code facilement par «&nbsp;si x est compris entre –a et a et y compris entre 
+  –b et b&nbsp;».</span></p>
+<p style='text-align:justify'><span lang=FR>Et comment connaître la coordonée 
+  de (x,y) dans la base du rectangle&nbsp;? Et bien on peut faire l’autre opération 
+  inverse grâce à cette fameuse matrice qui représente la position du rectangle 
+  dans la grande base, faites donc l’opération inverse&nbsp;! Et hop, un petit 
+  calcul d’inversion de matrice, un petit produit matriciel, et quelques petits 
+  tests idiots, et le tour est joué&nbsp;!</span></p>
+<p style='text-align:justify'><span lang=FR>Moralité&nbsp;: quand un problème 
+  se pose, demandez-vous toujours si il n’est pas plus simple de le résoudre dans 
+  une base appropriée. Vous verrez un peu plus tard qu’il s’agit d’une des bases 
+  (c’est le cas de le dire) de tout moteur 3D. Vous verrez que tout objet possède 
+  une base «&nbsp;locale&nbsp;», dont la position est exprimée par rapport à une 
+  base «&nbsp;globale&nbsp;», commune à tous les objets. Mais je m’avance…</span></p>
+</body>
+</html>

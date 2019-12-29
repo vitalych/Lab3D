@@ -1,0 +1,111 @@
+<html>
+<head>
+
+<title>Les coordon&eacute;es homog&egrave;nes</title>
+
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+<body lang=RU class="Normal" bgcolor="#FFFFFF">
+<p class="super_title" align="center">Les coordonées homogènes</p>
+<p style='text-align:justify' class="normal">Si vous vous demandez à quoi peut 
+  bien correspondre une matrice de translation en 2D, et que vous cherchez une 
+  matrice 2x2 comme pour la matrice de rotation, vous allez chercher pour rien, 
+  elle n’existe pas. Pour la trouver, il va falloir introduire un nouveau concept&nbsp;: 
+  les coordonées homogènes (on dit aussi normalisées).</p>
+<p style='text-align:justify' class="normal">Vous savez que dans un plan, un point 
+  se représente par deux valeurs, un x et un y. Voici donc un nouveau concept&nbsp;: 
+  moi je dis qu’à présent, un point se représentera par trois valeurs&nbsp;: un 
+  x, un y et un t.</p>
+<p style='text-align:justify' class="normal">Ainsi, le point (1,2,1) correspond 
+  au point (2,4,2). En fait, la formule pour passer d’une représentation à une 
+  autre est&nbsp;:</p>
+<p style='text-align:justify;' class="normal">ancien_x=x/t</p>
+<p style='text-align:justify;' class="normal">ancien_y=y/t</p>
+<p style='text-align:justify' class="normal">Bref, si on multiplie tout par 2, 
+  on est toujours au même endroit. Jusque là, cette nouvelle invention semble 
+  donc totalement inutile. Sauf si je vous demande (pour rire) où se trouve le 
+  point (1,4,0)…</p>
+<p style='text-align:justify' class="normal">Heu, en (infini,infini)&nbsp;? Oui, 
+  mais c’est pas très précis, ça, non&nbsp;? Parce que (4,1,0) et (1,4,0) ça doit 
+  sûrement être deux choses différentes alors que dans le «&nbsp;vieux&nbsp;» 
+  système c’est tout les deux le «&nbsp;point&nbsp;» (infini,infini). Me voilà 
+  capable de distinguer des choses qui étaient indistinguables avant. Bien joué 
+  mais ça sert à quoi&nbsp;? C’est quoi finalement, ce point (1,4,0)&nbsp;?</p>
+<p style='text-align:justify' class="normal">Vous allez comprendre, imaginez le 
+  point (1,4,1), bon c’est facile, non&nbsp;? Ensuite prenez le point (1,4,0.1). 
+  Ha, il est un peu plus loin (en 10,40). Ensuite le point (1,4,0.001), il est 
+  loin, lui, en (1000,4000), etc… Et bien tous ces points sont alignés sur une 
+  droite de pente 4. Le point (1,4,0), c’est juste le «&nbsp;dernier&nbsp;» point 
+  de la droite. Un point qui est à l’infini, certes, mais pas n’importe où à l’infini&nbsp;: 
+  à l’infini sur une droite donnée. Bref, ce point, c’est une direction, une direction 
+  qui est la direction de la droite de pente 4. De même que le point (4,1,0) c’est 
+  le point qui représente la direction de la droite de pente un quart.</p>
+<p style='text-align:justify'> <span class="normal"><img
+src="./5_norm_coord.doc.files/image001.gif" align=top v:shapes="_x0000_s1058 _x0000_s1059 _x0000_s1060 _x0000_s1061 _x0000_s1062 _x0000_s1063 _x0000_s1064 _x0000_s1065 _x0000_s1066 _x0000_s1067 _x0000_s1068 _x0000_s1069 _x0000_s1070 _x0000_s1071"> 
+  </span></p>
+<p style='text-align:justify' class="normal">L’avantage du système&nbsp;? On ne 
+  fait plus de différence entre un point et une direction, c’est devenu deux concepts 
+  identiques, qui s’expriment exactement de la même façon. Mais à quoi ça sert&nbsp;?</p>
+<p style='text-align:justify' class="normal">Si je suis en un point et que je 
+  regarde dans la direction de pente 4 (en fait je regarde le point 1,4,0), quelle 
+  direction je regarde si je tourne mon regarde d’un angle a&nbsp;?</p>
+<p style='text-align:justify' class="normal">Il suffit de faire subir une rotation 
+  d’angle –a au point (1,4,0), grâce à quoi&nbsp;? A une matrice de rotation ! 
+  Voilà comment on peut faire tourner des lumières qui sont à l’infini dans les 
+  moteurs 3D et les logiciels de rendu, par exemple 3D Studio MAX…</p>
+<p style='text-align:justify' class="normal">La matrice de rotation dans ces nouvelles 
+  coordonées s’exprime comme ceci&nbsp;:</p>
+<p style='text-align:justify' class="normal"><sub> <img
+src="./5_norm_coord.doc.files/image003.gif" v:shapes="_x0000_i1025"> </sub> </p>
+<p style='text-align:justify' class="normal">Et oui, c’est une matrice 3x3, puisque 
+  nos points sont à présent des matrices colonnes de trois lignes. (3x1)</p>
+<p style='text-align:justify' class="normal">Et la matrice de translation, c’est 
+  (en 2D)</p>
+<p style='text-align:justify' class="normal"><sub> <img
+src="./5_norm_coord.doc.files/image005.gif" v:shapes="_x0000_i1026"> </sub> </p>
+<p class=MsoBodyText><span lang="FR" class="normal">A présent, comment on fait 
+  pour faire tourner un point autour d’un autre point quelconque&nbsp;? Et bien 
+  on commence par translater le centre de rotation à l’origine, ensuite on applique 
+  la rotation, et puis on translate le résultat pour replacer le centre au bon 
+  endroit. Il s’agit de trois opérations consécutives, qui peuvent s’exprimer 
+  en une seule, grâce à la combinaison des opérations avec le produit matriciel. 
+  Sans compter qu’on peut même translater un point «&nbsp;à l’infini&nbsp;» d’une 
+  distance infinie pour le ramener à l’origine, et vice-versa, il suffit de mettre 
+  dt=0. (ce qui arrive rarement, j’en conviens, en général on laisse dt à 1).</span></p>
+<p style='text-align:justify' class="normal">Dans toutes ces matrices, il y en 
+  a une qui est amusante, c’est justement la matrice Identité, c’est la matrice 
+  qui ne fait rien&nbsp;:</p>
+<p style='text-align:justify' class="normal"><sub> <img
+src="./5_norm_coord.doc.files/image007.gif" v:shapes="_x0000_i1027"> </sub> </p>
+<p style='text-align:justify' class="normal">Si vous transformez un point avec 
+  cette matrice, vous allez obtenir le point lui-même.</p>
+<p style='text-align:justify' class="normal">La notion d’inverse de matrice prend 
+  tout son sens, vu que la composition d’une matrice avec son inverse donne l’identité, 
+  on comprend que si une matrice fait une transformation, la matrice inverse fait 
+  l’opération inverse. Finalement, l’inverse d’une matrice de rotation d’angle 
+  a, c’est une matrice de rotation d’angle –a. De même pour la translation vous 
+  pouvez vérifier vous-même que</p>
+<p style='text-align:justify' class="normal"><sub> <img
+src="./5_norm_coord.doc.files/image009.gif" v:shapes="_x0000_i1028"> </sub> </p>
+<p style='text-align:justify' class="normal">Le fait que le produit matriciel 
+  n’est pas commutatif prend également tout son sens, il n’est en effet pas du 
+  tout équivalant de faire la rotation avant la translation ou la translation 
+  avant la rotation. Faites un dessin, vous comprendrez tout de suite pourquoi. 
+  Il faut donc toujours bien se méfier et vérifier que l’on compose les matrices 
+  dans le bon ordre.</p>
+<p style='text-align:justify' class="normal">On peut donc construire la matrice 
+  qui tourne un point x (x,y,t) autour d’un centre (cx,cy,ct) d’un angle a&nbsp;:</p>
+<p style='text-align:justify' class="normal"><sub> <img
+src="./5_norm_coord.doc.files/image011.gif" v:shapes="_x0000_i1029"> </sub> </p>
+<p style='text-align:justify' class="normal">Remarquez que le produit se fait 
+  en sens inverse, on commence par les dernières opérations.</p>
+<p style='text-align:justify' class="normal">Tout ce que je viens de raconter 
+  est immédiatement adaptable en 3D. Au lieu de jouer avec des (x,y,t), on joue 
+  avec des (x,y,z,t), les matrices de transformation sont des matrices (4x4).</p>
+<p style='text-align:justify' class="normal">Voilà, c’est tout ce qu’il faut comprendre 
+  sur les matrices pour assimiler le fonctionnement d’un moteur 3D simple. Le 
+  sujet sur les matrices est très vaste et elles ne servent pas qu’en géométrie.</p>
+<p class="normal">La rubrique suivante présente toutes les matrices intéressantes 
+  dans le cadre d’un espace tri-dimensionnel.</p>
+</body>
+</html>

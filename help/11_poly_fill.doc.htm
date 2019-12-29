@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Le remplissage des polygones</title>
+<link rel="stylesheet" href="default.css" type="text/css">
+</head>
+<body  bgcolor="#FFFFFF">
+<p class="super_title" align="center">Le remplissage des polygones</p>
+<p><b><span lang="FR-CH" class="normal">Remarque&nbsp;:</span></b><span lang="FR-CH" class="normal"> 
+  tout ce qui suit est applicable UNIQUEMENT aux objets déjà projetés à l’écran 
+  et possédant par conséquent des coordonnées 2D.</span></p>
+<h2><span lang=FR-CH><span class="grand_parag">1. Décomposition d’un polygone 
+  en triangles</span></span></h2>
+<p class="normal">Pour faciliter le travail de remplissage, on découpe les polygones 
+  en autant de triangles que nécessaire. Il est en effet plus simple de remplir 
+  chaque triangle séparément car on n’a à tenir compte que de trois cotés, alors 
+  qu’un polygone peut en avoir en théorie une infinité.</p>
+<p class="normal">Voici une illustration de ce procédé&nbsp;:</p>
+<p><span lang=FR-CH> <img width=423 height=187
+src="./11_poly_fill.doc.files/image002.jpg" v:shapes="_x0000_i1025"> <img src="pics/3dlab_cube.png" width="196" height="203"></span></p>
+<p><b><span lang="FR-CH" class="normal">Remarque</span></b><span lang="FR-CH" class="normal">&nbsp;: 
+  les couleurs ne sont là que pour mettre en évidence la décomposition en triangles. 
+  Le polygone qui correspond à une face est rempli avec une seule couleur.</span></p>
+<p>&nbsp;</p>
+<h2><span lang=FR-CH><span class="grand_parag">2. Le remplissage de chaque triangle</span></span></h2>
+<p class="normal">Le principe de base à retenir est le suivant&nbsp;: on remplit 
+  les triangles en traçant uniquement des lignes horizontales, comme le montre 
+  ce schéma&nbsp;:</p>
+<p> <span class="normal"><img width=396 height=263
+src="./11_poly_fill.doc.files/image004.jpg" align=left hspace=12 v:shapes="_x0000_s1026"> 
+  <span
+lang=FR-CH>On classe d’abord les points A, B et C du triangle en fonction de la 
+  coordonnée <b><i>y</i></b> de leur sommet. A est le point ayant la plus grande, 
+  B la moyenne et C la plus petite. On calcule ensuite les coefficients directeurs 
+  des droites [AC], [CB] et [AB] pour pouvoir tracer les lignes horizontales allant 
+  d’un bord à un autre.</span></span></p>
+<p class="normal">Si le triangle possède un côté parallèle à l’axe des ordonnées, 
+  on le détermine d’abord, ensuite on trace les traits horizontaux. En effet, 
+  les droites d’équations de type x=a n’ont pas de coefficient directeur et si 
+  on n’en tient pas compte, c’est des divisions par zéro garanties par la procédure 
+  de remplissage qui nous attendent.</p>
+<p class="normal">Le reste n’est qu’une question de programmation, ce qui n’a 
+  rien à voir avec la problématique de ces TPE. </p>
+<p class="normal">&nbsp;</p>
+<p class="normal">&nbsp;</p>
+<p class="normal">&nbsp;</p>
+<hr>
+<p align="center"><img src="pics/cube_uni.png" width="215" height="214"> 
+  <img src="pics/cube_tex.png" width="228" height="215"></p>
+<p  align="center">Les deux mani&egrave;res de remplir les surfaces 
+  d'un cube : qu'il y ait une texture ou non, on proc&egrave;de toujours en tra&ccedil;ant 
+  des traits horizontaux.</p>
+<p align="center"><img src="pics/sphere_tex.png" width="250" height="243"></p>
+<p align="center">Appliquer une texture sur une sph&egrave;re est 
+  nettement plus d&eacute;licat: les facettes deviennent trop apparentes, alors 
+  qu'une sph&egrave;re doit &ecirc;tre lisse. Dans ce cas, on utilise des m&eacute;thodes 
+  beaucoup plus complexes.</p>
+</body>
+</html>
