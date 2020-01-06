@@ -1,0 +1,125 @@
+object MainForm: TMainForm
+  Left = 368
+  Height = 615
+  Top = 120
+  Width = 874
+  Caption = 'Lab3D'
+  ClientHeight = 615
+  ClientWidth = 874
+  DesignTimePPI = 144
+  Menu = MainMenu1
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnDeactivate = FormDeactivate
+  OnKeyDown = FormKeyDown
+  OnKeyUp = FormKeyUp
+  OnMouseWheel = FormMouseWheel
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 36
+    Top = 579
+    Width = 874
+    Panels = <    
+      item
+        Width = 100
+      end    
+      item
+        Width = 150
+      end>
+    ParentBiDiMode = False
+    ParentFont = False
+    SimplePanel = False
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 582
+    Top = 0
+    Width = 874
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Caption = 'Panel1'
+    ParentFont = False
+    TabOrder = 1
+    OnResize = Panel1Resize
+  end
+  object MainMenu1: TMainMenu
+    Left = 48
+    Top = 77
+    object MenuItem1: TMenuItem
+      Caption = '&File'
+      object mnuFileNew: TMenuItem
+        Caption = '&New'
+        ShortCut = 16462
+        OnClick = mnuFileNewClick
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object mnuFileOpen: TMenuItem
+        Caption = 'Open...'
+        ShortCut = 16463
+        OnClick = mnuFileOpenClick
+      end
+      object mnuSaveAs: TMenuItem
+        Caption = '&Save As...'
+        OnClick = mnuSaveAsClick
+      end
+      object mnuFileSave: TMenuItem
+        Caption = 'Save'
+        ShortCut = 16467
+        OnClick = mnuFileSaveClick
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object mnuFileExit: TMenuItem
+        Caption = '&Exit'
+        ShortCutKey2 = 32883
+        OnClick = mnuFileExitClick
+      end
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Insert'
+      object mnuInsertCube: TMenuItem
+        Caption = 'Cube'
+        ShortCut = 16433
+        OnClick = mnuInsertCubeClick
+      end
+      object mnuInsertSphere: TMenuItem
+        Caption = 'Sphere'
+        ShortCut = 16434
+        OnClick = mnuInsertSphereClick
+      end
+      object mnuInsertBoard: TMenuItem
+        Caption = 'Board'
+        ShortCut = 16435
+        OnClick = mnuInsertBoardClick
+      end
+    end
+    object MenuItem2: TMenuItem
+      Caption = '&View'
+      object mnuObjectInspector: TMenuItem
+        Caption = '&Object inspector'
+        OnClick = mnuObjectInspectorClick
+      end
+    end
+    object MenuItem4: TMenuItem
+      Caption = '&Help'
+      object mnuHelpAbout: TMenuItem
+        Caption = '&About...'
+        OnClick = mnuHelpAboutClick
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Title = 'Open project'
+    Filter = 'Lab3D Project Files|*.l3d'
+    Left = 59
+    Top = 236
+  end
+  object SaveDialog1: TSaveDialog
+    Title = 'Save project as'
+    Filter = 'Lab3D Project Files|*.l3d'
+    Left = 126
+    Top = 237
+  end
+end

@@ -12,7 +12,7 @@ unit EditExp;
 interface
 
 uses
-  SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
+  SysUtils, Windows, Messages, Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls, Grids;
 
 type
@@ -160,6 +160,8 @@ begin
           ChangeVar;
      end;
 
+     loc := 0;
+     cod := 0;
      { I don't use loc [location of Error] (till now)}
      FValue:=Evaluate(FExp,cod,loc); { CORE !!!}
      if cod<>0 then FValue:=0;
